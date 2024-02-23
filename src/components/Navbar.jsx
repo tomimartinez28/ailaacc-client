@@ -2,7 +2,7 @@ import logo from '../assets/logo/logo.png'
 
 export function Navbar () {
   return (
-    <nav className='bg-orange-400/20  dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600'>
+    <nav className='bg-gray-900/60 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600'>
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
         <a href='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
           <img src={logo} className='h-8' alt='LOGO DE AILAACC' />
