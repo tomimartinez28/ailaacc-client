@@ -6,7 +6,7 @@ export function ServicesSection () {
   const serviceId = useId()
 
   return (
-    <section id='services' className='h-screen grid grid-cols-2 justify-center items-center gap mt-8 p-5 '>
+    <section id='services' className='h-[500px] grid grid-cols-3 justify-center items-center gap-5 px-5 bg-gray-950'>
       {
       SERVICES.map(service => (
 
