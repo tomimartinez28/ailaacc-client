@@ -1,4 +1,4 @@
-import { Input } from './Input'
+import { ContactForm } from './ContactForm'
 
 export function ContactSection () {
   return (
@@ -11,28 +11,7 @@ export function ContactSection () {
         <p>Cel: (+54)3644338436</p>
       </article>
       <aside>
-        <form method='post' className='flex flex-col gap-5'>
-          <div className='flex justify-between'>
-            <div className='flex flex-col items-start w-2/4'>
-              <label htmlFor='name'>Nombre</label>
-              <Input id='name' type='text' />
-            </div>
-            <div className='flex flex-col items-start w-2/4'>
-              <label htmlFor='lastname'>Apellido</label>
-              <Input id='lastname' type='text' />
-            </div>
-          </div>
-          <div className='flex flex-col items-start w-full'>
-            <label htmlFor='email'>Email</label>
-            <Input id='email' type='email' />
-          </div>
-          <div className='flex flex-col items-start'>
-            <label htmlFor='message'>Dejanos un mensaje</label>
-            <Input id='message' type='text' />
-          </div>
-
-          <button type='button' class='text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900'>Enviar</button>
-        </form>
+        <ContactForm />
       </aside>
 
     </section>
