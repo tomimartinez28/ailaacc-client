@@ -1,11 +1,7 @@
-import logo from '../assets/logo/logo.png'
 import { useState, useRef } from 'react'
-import { Button, Checkbox, Label, Modal, TextInput } from 'flowbite-react'
+import logo from '../assets/logo/logo.png'
 
 export function Navbar () {
-  const [openModal, setOpenModal] = useState(false)
-  const emailInputRef = useRef(null)
-
   return (
     <>
       <nav className='bg-gray-900/60 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600'>
@@ -42,55 +38,6 @@ export function Navbar () {
         </div>
       </nav>
 
-      <Modal show={openModal} onClose={() => setOpenModal(false)}>
-        <Modal show={openModal} size='md' popup onClose={() => setOpenModal(false)} initialFocus={emailInputRef}>
-          <Modal.Header />
-          <Modal.Body>
-
-            <form className='space-y-6'>
-              <h3 className='text-xl font-medium text-gray-900 dark:text-white'>Iniciar sesión</h3>
-
-              <div>
-                <div className='mb-2 block'>
-                  <Label htmlFor='email' value='Tu email' />
-                </div>
-                <TextInput id='email' ref={emailInputRef} placeholder='tomas@gmail.com' required />
-              </div>
-
-              <div>
-                <div className='mb-2 block'>
-                  <Label htmlFor='password' value='Contraseña' />
-                </div>
-                <TextInput id='password' type='password' required />
-              </div>
-
-              <div className='flex justify-between'>
-                <div className='flex items-center gap-2'>
-                  <Checkbox id='remember' />
-                  <Label htmlFor='remember'>Recordarme</Label>
-                </div>
-                <a href='#' className='text-sm text-cyan-700 hover:underline dark:text-cyan-500'>
-                  Olvidaste tu contraseña
-                </a>
-              </div>
-
-              <div className='w-full'>
-                <Button>Ingresar</Button>
-              </div>
-
-              <div className='flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300'>
-                No tenes una cuenta?&nbsp;
-                <a href='#' className='text-cyan-700 hover:underline dark:text-cyan-500'>
-                  Crear cuenta
-                </a>
-              </div>
-            </form>
-
-          </Modal.Body>
-
-        </Modal>
-
-      </Modal>
     </>
   )
 }

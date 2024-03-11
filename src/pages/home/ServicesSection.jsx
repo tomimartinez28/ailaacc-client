@@ -1,5 +1,5 @@
-import { ServiceCard } from './ServiceCard'
-import { SERVICES } from '../const'
+import { ServiceCard } from '../../components/ServiceCard'
+import { SERVICES } from '../../const'
 
 export function ServicesSection () {
   return (
