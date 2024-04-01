@@ -1,18 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { Link, redirect } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react'
 import { login } from '../actions/auth'
 
-const Login = ({ login }) => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   })
-
-  useEffect(() => {
-    console.log(import.meta.env.VITE_BACKEND_URL)
-  }, [])
 
   const { email, password } = formData
 
@@ -22,6 +18,10 @@ const Login = ({ login }) => {
     e.preventDefault()
 
     login(email, password)
+  }
+
+  if (isAuthenticated) {
+    return <Navigate to='/' />
   }
 
   // is the user authenticated? redirect to the home page

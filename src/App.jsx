@@ -1,13 +1,13 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { HomePage } from './pages/home/HomePage'
-import { ResetPassword } from './pages/ResetPassword'
-import { Signup } from './pages/Signup'
+import ResetPassword from './pages/ResetPassword'
+import Signup from './pages/Signup'
 import Login from './pages/Login'
-import { ResetPasswordConfirm } from './pages/ResetPasswordConfirm'
-import { Activate } from './pages/Activate'
+import ResetPasswordConfirm from './pages/ResetPasswordConfirm'
+import Activate from './pages/Activate'
 import { Provider } from 'react-redux'
-import { Layout } from './hocs/Layout'
+import Layout from './hocs/Layout'
 import store from './store'
 
 function App () {

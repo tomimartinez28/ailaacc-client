@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
-import { Navbar } from '../components/Navbar'
+import React, { useEffect } from 'react'
+import Navbar from '../components/Navbar'
+import { connect } from 'react-redux'
+import { checkAuthenticated, loadUser } from '../actions/auth'
 
-export function Layout (props) {
+function Layout (props) {
+  useEffect(() => {
+    props.checkAuthenticated()
+    props.loadUser()
+  }, [])
   return (
-    <div className='h-screen flex flex-col items-center justify-center'>
+    <div>
       <Navbar />
       {props.children}
     </div>
   )
 }
+
+export default connect(null, { checkAuthenticated, loadUser })(Layout)

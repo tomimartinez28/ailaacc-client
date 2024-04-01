@@ -1,4 +1,3 @@
-import { Navbar } from '../../components/Navbar'
 import { HomeSection } from './HomeSection'
 import { ServicesSection } from './ServicesSection'
 import { AboutSection } from './AboutSection'
