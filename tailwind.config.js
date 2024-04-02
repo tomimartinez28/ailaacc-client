@@ -7,6 +7,11 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        customYellow: '#ecc819',
+        customGreen: '#95b735',
+        customOrange: '#c85516'
+      },
       backgroundImage: {
         school: 'linear-gradient(to right, rgba(247, 247, 247, 0.5), rgba(0, 0, 0, 0.5)), url("./src/assets/img/school.jpg")'
       },

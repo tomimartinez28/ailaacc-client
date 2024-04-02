@@ -1,22 +1,17 @@
-'use client'
-
-import { Card } from 'flowbite-react'
-
 export function ServiceCard ({ service }) {
-  const { name, description, imgSrc } = service
+  const { name, imgSrc } = service
 
   return (
-    <Card
-      className='max-w-sm h-[400px]'
-      imgAlt='Meaningful alt text for an image that is not purely decorative'
-      imgSrc={imgSrc}
+    <div
+      className='text-[#f6f6f6] size-64 rounded-lg flex flex-col justify-center items-center hover:cursor-pointer'
+
     >
-      <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+
+      <img className='rounded-full size-32 md:size-48' src={imgSrc} alt='' />
+      <h5 className='font-bold text-center text-sm text-gray-90'>
         {name}
       </h5>
-      <p className='font-normal text-gray-700 dark:text-gray-400'>
-        {description}
-      </p>
-    </Card>
+
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 export function Footer () {
   return (
-    <div className='p-4 bg-gray-950'>
+    <div className='p-4'>
 
       <footer className='bg-gray-800 rounded-lg shadow dark:bg-gray-800'>
         <div className='w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between'>

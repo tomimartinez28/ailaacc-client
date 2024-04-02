@@ -9,7 +9,7 @@ function Navbar ({ logout, isAuthenticated }) {
   const guestsLinks = () => (
     <>
       <Link to='/login'>
-        <button className=' bg-blue-400 rounded-full px-5 py-2 hover:bg-blue-500'>Iniciar sesión</button>
+        <button className=' rounded-full bg-customYellow px-3 py-1 hover:bg-customYellow/65'>Iniciar sesión</button>
       </Link>
     </>
   )
@@ -17,7 +17,7 @@ function Navbar ({ logout, isAuthenticated }) {
   const authLinks = () => (
     <>
       <li>
-        <a href='#!' onClick={logout}>Logout</a>
+        <a href='#!' onClick={logout}>Cerrar sesión</a>
       </li>
     </>
   )
@@ -30,25 +30,26 @@ function Navbar ({ logout, isAuthenticated }) {
 
   return (
     <>
-      <header>
-        <nav className='flex justify-between items-center w-[92%] mx-auto'>
+      <header className='bg-[#fff] shadow-xl'>
+        <nav className='flex justify-between items-center w-[92%] mx-auto bg-[#fff] overflow-scroll'>
           <div>
             <img src={logo} alt='Logo de AILAACC' className='size-16' />
           </div>
           <div className={`
+          bg-[#fff]
           md:static absolute
           flex items-center justify-center 
-          bg-white 
           md:w-auto w-full 
           md:min-h-fit 
-          px-5 
-          left-0 top-${isMenuOpen ? '[9%]' : '[-100%]'}
-          transition-all duration-150`}
+          px-5 py-4
+          ${isMenuOpen ? 'left-0' : 'left-[-100%]'} 
+          top-[9.5%]
+          transition-all duration-500`}
           >
             <ul className='flex md:flex-row flex-col items-center md:gap-[4vw] gap-8'>
-              <Link to='#'>Inicio</Link>
-              <Link>Nuestros servicios</Link>
-              <Link>Contacto</Link>
+              <a href='#'>Inicio</a>
+              <a href='#services'>Nuestros servicios</a>
+              <a href='#contact'>Contacto</a>
             </ul>
           </div>
           <div className='flex items-center gap-6'>

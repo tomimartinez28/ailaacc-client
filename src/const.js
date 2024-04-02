@@ -1,20 +1,20 @@
 export const SERVICES = [
   {
     id: 1,
-    name: 'Centro Educativo Terapeutico',
+    name: 'CENTRO EDUCATIVO TERAPÉUTICO',
     description: 'Descripcion de CET',
-    imgSrc: 'https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcTZCSmCzmIPm0up8wmW566cK5w3sSTUChT5UnaU3VnFxrHwoRNSnks0xUBmj2r2oeJk'
+    imgSrc: 'src/assets/img/cet.webp'
   },
   {
     id: 2,
-    name: 'Servicio de Apoyo a la Integración Escolar',
+    name: 'SERVICIO DE APOYO A LA INTEGRACIÓN ESCOLAR',
     description: 'Descripcion de SAIE',
-    imgSrc: 'https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcTZCSmCzmIPm0up8wmW566cK5w3sSTUChT5UnaU3VnFxrHwoRNSnks0xUBmj2r2oeJk'
+    imgSrc: 'src/assets/img/saie.webp'
   },
   {
     id: 3,
-    name: 'Estimulación Temprana',
+    name: 'ESTIMULACIÓN TEMPRANA',
     description: 'Descripcion de ET',
-    imgSrc: 'https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcTZCSmCzmIPm0up8wmW566cK5w3sSTUChT5UnaU3VnFxrHwoRNSnks0xUBmj2r2oeJk'
+    imgSrc: 'src/assets/img/et.webp'
   }
 ]
