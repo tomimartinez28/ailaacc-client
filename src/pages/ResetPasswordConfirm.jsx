@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-export function ResetPasswordConfirm () {
-  return (
-    <div>
-      ResetPasswordConfirm
-    </div>
-  )
-}
-=======
 import React, { useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -75,4 +66,3 @@ const ResetPasswordConfirm = ({ match, resetPasswordConfirm }) => {
 }
 
 export default connect(null, { resetPasswordConfirm })(ResetPasswordConfirm)
->>>>>>> auth
