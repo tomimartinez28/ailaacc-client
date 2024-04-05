@@ -11,7 +11,7 @@ export function MenuButton ({ onClick }) {
         strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'
-        className='icon icon-tabler icons-tabler-outline icon-tabler-menu-2 cursor-pointer md:hidden'
+        className='icon icon-tabler icons-tabler-outline icon-tabler-menu-2 cursor-pointer'
       ><path stroke='none' d='M0 0h24v24H0z' fill='none' /><path d='M4 6l16 0' /><path d='M4 12l16 0' /><path d='M4 18l16 0' />
       </svg>
     </button>

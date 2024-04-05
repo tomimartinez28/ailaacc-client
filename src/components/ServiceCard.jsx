@@ -3,12 +3,12 @@ export function ServiceCard ({ service }) {
 
   return (
     <div
-      className='text-[#f6f6f6] size-64 rounded-lg flex flex-col justify-center items-center hover:cursor-pointer'
+      className=' size-64 rounded-lg flex flex-col justify-center items-center hover:cursor-pointer'
 
     >
 
-      <img className='rounded-full size-32 md:size-48' src={imgSrc} alt='' />
-      <h5 className='font-bold text-center text-sm text-gray-90'>
+      <img className='rounded-full size-44 md:size-64' src={imgSrc} alt='' />
+      <h5 className='font-bold text-center text-sm md:text-2xl mt-4'>
         {name}
       </h5>
 

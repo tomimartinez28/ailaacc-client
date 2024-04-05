@@ -8,7 +8,7 @@ export function ContactSection () {
         <ContactForm />
       </article>
 
-      <article className='flex flex-col items-center gap-4'>
+      <article className='flex flex-col items-center gap-4 mt-5'>
         <p>Mariano Moreno 551 - Pcia. Roque Sáenz Peña</p>
         <p>administracion@ailaaccuep195.com</p>
         <p>Cel: (+54)3644338436</p>

@@ -1,11 +1,10 @@
 export function AboutSection () {
   return (
-    <section id='about' className='h-[400px] flex flex-col justify-center px-3'>
+    <section id='about' className='h-[400px] flex flex-col justify-center px-3 bg-aboutBg bg-fixed bg-cover text-[#f6f6f6]'>
 
-      <article className='flex flex-col items-center justify-center gap-5'>
-        <h3 className='text-xl'>ACERCA DE</h3>
-        <h2 className='font-bold'>Nuestro equipo interdisciplinario</h2>
-        <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rerum, maxime autem necessitatibus perferendis accusamus magni numquam, repudiandae odit, ab exercitationem asperiores. Laborum a aliquam tempora soluta quod autem ut?</p>
+      <article className='flex flex-col gap-5 w-48 md:w-80'>
+        <h3 className='text-xl md:text-2xl font-bold'>SOBRE NOSOTROS</h3>
+        <p className='text-sm md:base text-wrap'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rerum, maxime autem necessitatibus perferendis accusamus magni numquam, repudiandae odit, ab exercitationem asperiores. Laborum a aliquam tempora soluta quod autem ut?</p>
       </article>
 
       {/*  <aside className='h-full'>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Button, Label, TextInput } from 'flowbite-react'
-import { resetPasswordConfirm } from '../actions/auth'
+import { resetPasswordConfirm } from '../../actions/auth'
 
 const ResetPasswordConfirm = ({ match, resetPasswordConfirm }) => {
   const { uid } = useParams()

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { ContactEndpoint } from '../endpoints'
+import { Button } from './ui/Button'
 
 export function ContactForm () {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
@@ -122,7 +123,7 @@ export function ContactForm () {
           <span className='sr-only'>Enviando...</span>
         </div>}
 
-      <button type='submit' className='text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900'>Enviar</button>
+      <Button type='submit'>Enviar</Button>
     </form>
   )
 }

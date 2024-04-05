@@ -1,5 +1,0 @@
-export function Input ({ id, type }) {
-  return (
-    <input id={id} type={type} className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-yellow-300 focus:ease-in' />
-  )
-}
