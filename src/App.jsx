@@ -9,7 +9,9 @@ import Activate from './pages/auth/Activate'
 import { Provider } from 'react-redux'
 import Layout from './hocs/Layout'
 import store from './store'
-import { Dashboard } from './pages/admin/Dashboard'
+import { Admin } from './pages/admin/Admin'
+import { Missing } from './pages/home/Missing'
+import PrivateRoutes from './utils/PrivateRoutes'
 
 function App () {
   return (
@@ -17,13 +19,20 @@ function App () {
       <Router>
         <Layout>
           <Routes>
+            {/* public routes */}
             <Route exact path='/' Component={HomePage} />
             <Route exact path='/login' Component={Login} />
             <Route exact path='/signup' Component={Signup} />
             <Route exact path='/reset-password' Component={ResetPassword} />
             <Route exact path='/password/reset/confirm/:uid/:token' Component={ResetPasswordConfirm} />
             <Route exact path='/activate/:uid/:token' Component={Activate} />
-            <Route exact path='/dashboard' Component={Dashboard} />
+            {/* protected routes */}
+            <Route element={<PrivateRoutes />}>
+              <Route exact path='/dashboard' Component={Admin} />
+            </Route>
+
+            {/* catch all */}
+            <Route exact path='*' Component={Missing} />
           </Routes>
         </Layout>
       </Router>

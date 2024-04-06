@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { logout } from '../actions/auth'
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../assets/logo/logo.png'
 import { MenuButton } from './ui/MenuButton'
 import { connect } from 'react-redux'
 
@@ -27,7 +26,7 @@ function Navbar ({ logout, isAuthenticated }) {
   const guestsLinks = () => (
     <>
       <Link to='/login'>
-        <button className='text-[#f6f6f6] rounded-full bg-customOrange border-2 border-customOrange px-3 py-1 hover:bg-transparent hover:text-black transition-all duration-200'>INICIAR SESIÓN</button>
+        <button className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>INICIAR SESIÓN</button>
       </Link>
     </>
   )
@@ -35,7 +34,7 @@ function Navbar ({ logout, isAuthenticated }) {
   const authLinks = () => (
     <>
       <li>
-        <a href='#!' onClick={logout}>Cerrar sesión</a>
+        <button className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200' onClick={logout}>CERRAR SESIÓN</button>
       </li>
     </>
   )
@@ -48,15 +47,19 @@ function Navbar ({ logout, isAuthenticated }) {
 
   return (
     <>
-      <header className=''>
-        <nav className='flex justify-between items-center w-full mx-auto overflow-scroll px-2'>
-          <div>
+      <header className='h-16 flex items-center'>
+
+        <nav className='flex w-full px-2'>
+          {/*   <div>
             <img src={logo} alt='Logo de AILAACC' className='size-16' />
-          </div>
-          <div className={`
+          </div> */}
+          <div className='md:w-full flex items-center justify-center'>
+            <div className={`
           text-[#f6f6f6]
           backdrop-blur-md
-          bg-black/60
+          border-2
+          border-black/10
+          bg-black/30
           md:rounded-full
           md:static absolute
           flex items-center justify-center 
@@ -66,23 +69,24 @@ function Navbar ({ logout, isAuthenticated }) {
           ${isMenuOpen ? 'left-0' : 'left-[-100%]'} 
           top-[9.5%]
           transition-all duration-500`}
-          >
-            <ul className='flex md:flex-row flex-col items-center md:gap-[4vw] gap-8'>
-              <a href={location !== '/' ? '/' : '/#'}>Inicio</a>
-              <a href={location !== '/' ? '/#services' : '#services'}>Nuestros servicios</a>
-              <a href={location !== '/' ? '/#about' : '#about'}>Sobre nosotros</a>
-              <a href={location !== '/' ? '/#contact' : '#contact'}>Contacto</a>
-            </ul>
+            >
+              <ul className='flex md:flex-row flex-col items-center gap-2 text-sm'>
+                <a href={location !== '/' ? '/' : '/#'} className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>INICIO</a>
+                <a href={location !== '/' ? '/#services' : '#services'} className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>NUESTROS SERVICIOS</a>
+                <a href={location !== '/' ? '/#about' : '#about'} className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>SOBRE NOSOTROS</a>
+                <a href={location !== '/' ? '/#contact' : '#contact'} className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>CONTACO</a>
+                {isAuthenticated ? authLinks() : guestsLinks()}
+              </ul>
+            </div>
           </div>
-          <div className='flex items-center gap-2'>
-            {isAuthenticated ? authLinks() : guestsLinks()}
-
-            {
+          {
               !hideMenuButton &&
-                <MenuButton onClick={toggleMenu} />
-            }
+                <div className='flex items-center gap-2 min-w-36'>
 
-          </div>
+                  <MenuButton onClick={toggleMenu} />
+
+                </div>
+}
 
         </nav>
       </header>

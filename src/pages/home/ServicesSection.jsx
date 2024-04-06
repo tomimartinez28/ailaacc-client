@@ -4,7 +4,7 @@ import { SERVICES } from '../../const'
 export function ServicesSection () {
   return (
     <section
-      id='services' className='flex flex-col md:h-[600px] md:flex-row justify-around items-center
+      id='services' className='flex flex-col md:h-[400px] md:flex-row justify-around items-center
 
     '
     >

@@ -8,19 +8,20 @@ const Signup = ({ signUp, isAuthenticated }) => {
   const [accountCreated, setAccountCreated] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
+    last_name: '',
     email: '',
     password: '',
     rePassword: ''
   })
 
-  const { name, email, password, rePassword } = formData
+  const { name, last_name, email, password, rePassword } = formData
 
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value })
 
   const onSubmit = e => {
     e.preventDefault()
     if (password === rePassword) {
-      signUp(name, email, password, rePassword)
+      signUp(name, last_name, email, password, rePassword)
       setAccountCreated(true)
     }
   }
@@ -39,13 +40,13 @@ const Signup = ({ signUp, isAuthenticated }) => {
 
         <div>
           <div className='mb-2 block'>
-            <Label htmlFor='email' value='Tu email' />
+            <Label htmlFor='name' value='Tu nombre' />
           </div>
           <TextInput
-            name='email'
-            type='email'
-            value={email}
-            placeholder='tu_email@gmail.com'
+            name='name'
+            type='text'
+            value={name}
+            placeholder='Tomas'
             onChange={e => onChange(e)}
             required
           />
@@ -53,13 +54,27 @@ const Signup = ({ signUp, isAuthenticated }) => {
 
         <div>
           <div className='mb-2 block'>
-            <Label htmlFor='name' value='Ingresa tu nombre y apellido' />
+            <Label htmlFor='name' value='Tu apellido' />
           </div>
           <TextInput
-            name='name'
+            name='last_name'
             type='text'
-            value={name}
-            placeholder='Tomas Martinez'
+            value={last_name}
+            placeholder='Martinez'
+            onChange={e => onChange(e)}
+            required
+          />
+        </div>
+
+        <div>
+          <div className='mb-2 block'>
+            <Label htmlFor='email' value='Tu email' />
+          </div>
+          <TextInput
+            name='email'
+            type='email'
+            value={email}
+            placeholder='tu_email@gmail.com'
             onChange={e => onChange(e)}
             required
           />

@@ -14,7 +14,7 @@ export default {
         backgroundColor: '#f8f1de'
       },
       backgroundImage: {
-        aboutBg: 'linear-gradient(to right, rgb(49,49,49), rgb(200,85,22,.4)), url("./src/assets/img/img2.webp")'
+        aboutBg: 'linear-gradient(to right, rgb(49,49,49), rgb(200,85,22,.4)), url("./src/assets/img/img1.webp")'
       },
       animation: {
         shimmer: 'shimmer 2s linear infinite'

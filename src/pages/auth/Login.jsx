@@ -21,7 +21,7 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   if (isAuthenticated) {
-    return <Navigate to='/' />
+    return <Navigate to='/dashboard' />
   }
 
   // is the user authenticated? redirect to the home page
