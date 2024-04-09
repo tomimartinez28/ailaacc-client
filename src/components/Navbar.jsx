@@ -5,41 +5,45 @@ import { MenuButton } from './ui/MenuButton'
 import { connect } from 'react-redux'
 
 function Navbar ({ logout, isAuthenticated }) {
-  const [hideMenuButton, setHideMenuOpen] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  // Función para determinar si se debe ocultar el botón del menú
+  const shouldHideMenuButton = () => window.innerWidth > 768
+
+  const [hideMenuButton, setHideMenuButton] = useState(shouldHideMenuButton())
+
+  // Función para manejar el cambio de tamaño de la ventana
+  const handleResize = () => {
+    // Actualiza el estado en función del ancho de la ventana
+    setHideMenuButton(shouldHideMenuButton())
+  }
   useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth
-      if (width >= 768) {
-        setHideMenuOpen(true)
-      } else {
-        setHideMenuOpen(false)
-      }
-    }
-
+    // Agrega el evento de cambio de tamaño de la ventana al montar el componente
     window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+
+    // Elimina el evento de cambio de tamaño de la ventana al desmontar el componente
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, []) // Se ejecuta solo una vez al montar el componente
 
   const location = useLocation()
 
   const guestsLinks = () => (
     <>
       <Link to='/login'>
-        <button className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>INICIAR SESIÓN</button>
+        <button classname=''>INICIAR SESIÓN</button>
       </Link>
     </>
   )
 
   const authLinks = () => (
     <>
-      <li>
-        <button className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200' onClick={logout}>CERRAR SESIÓN</button>
-      </li>
+
+      <button classname='' onClick={logout}>CERRAR SESIÓN</button>
+
     </>
   )
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -49,18 +53,18 @@ function Navbar ({ logout, isAuthenticated }) {
     <>
       <header className='h-16 flex items-center'>
 
-        <nav className='flex w-full px-2'>
+        <nav className='flex w-full px-2 text-sm md:justify-center items-center justify-between'>
           {/*   <div>
-            <img src={logo} alt='Logo de AILAACC' className='size-16' />
+            <img src={logo} alt='Logo  de AILAACC' className='size-16' />
           </div> */}
-          <div className='md:w-full flex items-center justify-center'>
-            <div className={`
+
+          <div className={`
           text-[#f6f6f6]
-          backdrop-blur-md
-          border-2
-          border-black/10
-          bg-black/30
-          md:rounded-full
+          bg-customOrange
+          md:text-black
+          
+          md:bg-transparent
+          h-screen
           md:static absolute
           flex items-center justify-center 
           md:w-auto w-full 
@@ -69,24 +73,27 @@ function Navbar ({ logout, isAuthenticated }) {
           ${isMenuOpen ? 'left-0' : 'left-[-100%]'} 
           top-[9.5%]
           transition-all duration-500`}
-            >
-              <ul className='flex md:flex-row flex-col items-center gap-2 text-sm'>
-                <a href={location !== '/' ? '/' : '/#'} className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>INICIO</a>
-                <a href={location !== '/' ? '/#services' : '#services'} className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>NUESTROS SERVICIOS</a>
-                <a href={location !== '/' ? '/#about' : '#about'} className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>SOBRE NOSOTROS</a>
-                <a href={location !== '/' ? '/#contact' : '#contact'} className='rounded-full py-1 px-2 hover:bg-backgroundColor hover:text-black transition-all duration-200'>CONTACO</a>
-                {isAuthenticated ? authLinks() : guestsLinks()}
-              </ul>
-            </div>
+          >
+            <ul className='flex md:flex-row flex-col items-center gap-5 '>
+              <a href={location !== '/' ? '/' : '/#'} className='hover:font-bold hover:text-customOrange transition-all duration-100 hover:scale-110'>INICIO</a>
+              <a href={location !== '/' ? '/#services' : '#services'} className='hover:font-bold hover:text-customOrange transition-all duration-100 hover:scale-110'>NUESTROS SERVICIOS</a>
+              <a href={location !== '/' ? '/#about' : '#about'} className='hover:font-bold hover:text-customOrange transition-all duration-100 hover:scale-110'>SOBRE NOSOTROS</a>
+              <a href={location !== '/' ? '/#contact' : '#contact'} className='hover:font-bold hover:text-customOrange transition-all duration-100 hover:scale-110'>CONTACO</a>
+
+            </ul>
           </div>
+
           {
-              !hideMenuButton &&
-                <div className='flex items-center gap-2 min-w-36'>
+            !hideMenuButton &&
+              <div className='flex items-center gap-2'>
 
-                  <MenuButton onClick={toggleMenu} />
+                <MenuButton onClick={toggleMenu} />
 
-                </div>
-}
+              </div>
+          }
+          <div className=' md:absolute md:end-4'>
+            {isAuthenticated ? authLinks() : guestsLinks()}
+          </div>
 
         </nav>
       </header>

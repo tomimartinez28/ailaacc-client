@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { ContactEndpoint } from '../endpoints'
-import { Button } from './ui/Button'
+import { motion } from 'framer-motion'
 
 export function ContactForm () {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
@@ -22,7 +22,7 @@ export function ContactForm () {
   })
 
   return (
-    <form method='post' onSubmit={onSubmit} className='flex flex-col gap-5'>
+    <form method='post' onSubmit={onSubmit} className='flex flex-col gap-5 mt-11 md:mt-5'>
       <div className='flex justify-between'>
         <div className='flex flex-col items-start w-2/4'>
           <label htmlFor='name'>Nombre</label>
@@ -123,7 +123,7 @@ export function ContactForm () {
           <span className='sr-only'>Enviando...</span>
         </div>}
 
-      <Button type='submit'>Enviar</Button>
+      <motion.button whileHover={{ scale: 0.9 }} className='rounded-full bg-customOrange text-[#f6f6f6] w-[100px] h-12 font-semibold' type='submit'>ENVIAR</motion.button>
     </form>
   )
 }

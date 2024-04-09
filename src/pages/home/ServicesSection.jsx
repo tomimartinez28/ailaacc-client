@@ -1,6 +1,6 @@
 import { ServiceCard } from '../../components/ServiceCard'
 import { SERVICES } from '../../const'
-
+import { motion } from 'framer-motion'
 export function ServicesSection () {
   return (
     <section
@@ -9,8 +9,18 @@ export function ServicesSection () {
     '
     >
       {
-      SERVICES.map(service => (
-        <ServiceCard key={service.id} service={service} />
+
+      SERVICES.map((service, index) => (
+        <motion.div
+          key={service.id}
+          initial={{ x: -200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: index * 0.5, duration: 1 }}
+          viewport={{ once: true }}
+
+        >
+          <ServiceCard service={service} />
+        </motion.div>
       ))
     }
     </section>

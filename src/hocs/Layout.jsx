@@ -8,9 +8,12 @@ function Layout (props) {
     props.checkAuthenticated()
     props.loadUser()
   }, [])
+
   return (
     <div>
+
       <Navbar />
+
       {props.children}
     </div>
   )
