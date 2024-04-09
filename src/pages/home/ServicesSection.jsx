@@ -13,9 +13,11 @@ export function ServicesSection () {
       SERVICES.map((service, index) => (
         <motion.div
           key={service.id}
-          initial={{ x: -200, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: index * 0.5, duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ delay: index * 0.1 }}
           viewport={{ once: true }}
 
         >

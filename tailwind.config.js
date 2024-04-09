@@ -1,3 +1,8 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -15,24 +20,25 @@ export default {
       },
       backgroundImage: {
         aboutBg: 'linear-gradient(to right, rgb(49,49,49), rgb(200,85,22,.4)), url("./src/assets/img/img1.webp")'
-      },
-      animation: {
-        shimmer: 'shimmer 2s linear infinite'
-      },
-      keyframes: {
-        shimmer: {
-          from: {
-            backgroundPosition: '0 0'
-          },
-          to: {
-            backgroundPosition: '-200% 0'
-          }
-        }
       }
+
     }
   },
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+    addVariablesForColors
   ]
 
+}
+
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
 }

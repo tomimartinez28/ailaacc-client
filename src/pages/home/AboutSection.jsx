@@ -1,13 +1,27 @@
-import { motion } from 'framer-motion'
+import { StickyScroll } from '../../components/ui/sticky-scroll-reveal'
+import img1 from '../../assets/img/img1.webp'
+import img2 from '../../assets/img/img2.webp'
+import img3 from '../../assets/img/img3.webp'
+import img4 from '../../assets/img/img4.webp'
+
 export function AboutSection () {
+  const contentArray = [
+    {
+      title: 'SOBRE NOSOTROS', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam minima, eos explicabo repellendus commodi est natus fugiat id quaerat asperiores sint fuga? Aut quisquam perferendis dolore ratione dolores doloremque maiores.', content: <img src={img1} />
+    },
+    {
+      title: 'NUESTRO EQUIPO', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam minima, eos explicabo repellendus commodi est natus fugiat id quaerat asperiores sint fuga? Aut quisquam perferendis dolore ratione dolores doloremque maiores.', content: <img src={img2} />
+    },
+    {
+      title: 'TEST', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam minima, eos explicabo repellendus commodi est natus fugiat id quaerat asperiores sint fuga? Aut quisquam perferendis dolore ratione dolores doloremque maiores.', content: <img src={img3} />
+    },
+    {
+      title: 'TEST', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam minima, eos explicabo repellendus commodi est natus fugiat id quaerat asperiores sint fuga? Aut quisquam perferendis dolore ratione dolores doloremque maiores.', content: <img src={img4} />
+    }
+  ]
   return (
-    <section id='about' className='h-[400px] flex flex-col justify-center px-3 bg-aboutBg bg-fixed bg-cover text-[#f6f6f6]'>
 
-      <motion.article className='flex flex-col gap-5 w-80 md:w-[70%]' initial={{ scale: 0.9, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} transition={{ duration: 3 }}>
-        <h3 className='text-xl md:text-2xl font-mono text-customOrange'>sobre nosotros</h3>
-        <p className='text-lg md:base text-justify font-semibold text-[#f6f6f6]/90'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat sapiente at numquam praesentium saepe? Laborum, quibusdam nisi saepe aliquam nesciunt commodi officiis voluptate veniam dignissimos sequi nostrum cum laudantium quod?</p>
-      </motion.article>
+    <StickyScroll content={contentArray} />
 
-    </section>
   )
 }

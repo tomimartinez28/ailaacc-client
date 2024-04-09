@@ -4,7 +4,7 @@ export function ServiceCard ({ service }) {
   return (
 
     <div
-      className=' size-64 rounded-lg flex flex-col justify-center items-center hover:cursor-pointer'
+      className=' size-64 rounded-lg flex flex-col justify-center items-center hover:cursor-pointer mb-5'
     >
 
       <img className='rounded-full size-44 md:size-64' src={imgSrc} alt='' />
