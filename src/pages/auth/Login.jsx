@@ -73,7 +73,7 @@ const Login = ({ login, isAuthenticated }) => {
         </div>
 
         <div className='w-full'>
-          <Button type='submit'>Ingresar</Button>
+          <Button className='z-0' type='submit'>Ingresar</Button>
         </div>
 
         <div className='flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300'>

@@ -1,6 +1,10 @@
+import { useLocation } from 'react-router-dom'
+
 export function Footer () {
+  const location = useLocation()
+
   return (
-    <div className='p-4 bg-customOrange'>
+    <div className={`${location.pathname === '/' ? 'bg-customOrange' : 'bg-transparent'} p-4 `}>
 
       <footer className='bg-black/20 rounded-lg shadow'>
         <div className='w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between text-[#f6f6f6]'>

@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 export function MenuButton ({ onClick }) {
   return (
-    <button onClick={onClick}>
+    <motion.button whileHover={{ scale: 0.9 }} onClick={onClick} className='z-20 p-2 rounded-full border border-black/80 bg-black/80 text-[#f6f6f6]'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -14,6 +15,6 @@ export function MenuButton ({ onClick }) {
         className='icon icon-tabler icons-tabler-outline icon-tabler-menu-2 cursor-pointer'
       ><path stroke='none' d='M0 0h24v24H0z' fill='none' /><path d='M4 6l16 0' /><path d='M4 12l16 0' /><path d='M4 18l16 0' />
       </svg>
-    </button>
+    </motion.button>
   )
 }

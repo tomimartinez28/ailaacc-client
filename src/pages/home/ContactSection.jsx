@@ -1,4 +1,4 @@
-import { ContactForm } from '../../components/ContactForm'
+import { ContactForm } from '../../pages/home/ContactForm'
 import { WppIcon } from '../../components/icons/WppIcon'
 import { MailIcon } from '../../components/icons/MailIcon'
 import { SocialPill } from '../../components/ui/SocialPill'

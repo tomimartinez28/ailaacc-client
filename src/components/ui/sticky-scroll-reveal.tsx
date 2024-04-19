@@ -7,7 +7,7 @@ import { cn } from '../../utils/cn';
 export const StickyScroll = ({
   content,
   contentClassName,
-}: {
+}:  {
   content: {
     title: string;
     description: string;
@@ -41,17 +41,18 @@ export const StickyScroll = ({
   });
 
   const textColors = [
-    '#f6f6f6',
     '#ff6432',
+    '#f6f6f6',
     '#ff6432',
     '#f6f6f6',
 
   ]
 
   const backgroundColors = [
+    "#f8f1de",
     "#ff6432",
     "#f8f1de",
-    "#f8f1de",
+    "#ff6432",
   ];
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
@@ -64,7 +65,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 p-10"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
@@ -73,7 +74,7 @@ export const StickyScroll = ({
             <div key={item.title + index} className="my-20">
               <motion.h2
                 initial={{
-                  opacity: 0, color: 'white'
+                  opacity: 0, color: '#f6f6f6'
                 }}
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
@@ -104,7 +105,7 @@ export const StickyScroll = ({
           background: linearGradients[activeCard % linearGradients.length],
         }}
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:block h-80 w-96 rounded-md bg-white sticky top-10 overflow-hidden",
           contentClassName
         )}
       >

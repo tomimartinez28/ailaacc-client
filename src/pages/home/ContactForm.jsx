@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { ContactEndpoint } from '../endpoints'
+import { ContactEndpoint } from '../../endpoints'
 import { motion } from 'framer-motion'
 
 export function ContactForm () {
@@ -16,6 +16,7 @@ export function ContactForm () {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('Datos enviados', data)
+      setLoading(false)
     })
 
     reset()

@@ -1,6 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { HomePage } from './pages/home/HomePage'
+import { Sedes } from './pages/sedes/Sedes'
 import ResetPassword from './pages/auth/ResetPassword'
 import Signup from './pages/auth/Signup'
 import Login from './pages/auth/Login'
@@ -26,6 +27,7 @@ function App () {
             <Route exact path='/reset-password' Component={ResetPassword} />
             <Route exact path='/password/reset/confirm/:uid/:token' Component={ResetPasswordConfirm} />
             <Route exact path='/activate/:uid/:token' Component={Activate} />
+
             {/* protected routes */}
             <Route element={<PrivateRoutes />}>
               <Route exact path='/dashboard' Component={Admin} />

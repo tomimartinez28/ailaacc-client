@@ -1,35 +1,50 @@
-import { Button } from '../../components/ui/Button'
-import { motion } from 'framer-motion'
-import logo from '../../assets/logo/logo.png'
+import { MyCarousel } from '../../components/ui/MyCarousel'
+import { MainCard } from '../../components/ui/MainCard'
+import { LocationIcon } from '../../components/icons/LocationIcon'
+import { ServiceIcon } from '../../components/icons/ServiceIcon'
+import { ObraSocialIcon } from '../../components/icons/ObraSocialIcon'
+import { Modal } from '../../components/ui/Modal'
+import { Sedes } from '../sedes/Sedes'
+import { useState } from 'react'
+import { ObrasSociales } from './ObrasSociales'
+import { Services } from './Services'
 
 export function HomeSection () {
+  const [isOpen, setIsOpen] = useState(false)
+  const [selectedCard, setSelectedCard] = useState(null)
+
+  const renderModal = () => {
+    console.log(selectedCard)
+    switch (selectedCard) {
+      case 'os':
+        return (<ObrasSociales />)
+      case 'lo':
+        return (<Sedes />)
+      case 'ss':
+        return (<Services />)
+      default:
+        return (
+          <h2>Mal</h2>
+        )
+    }
+  }
+
+  const onClose = () => {
+    setIsOpen(false)
+  }
   return (
 
-    <main className='h-[600px] md:h-screen flex flex-col justify-center items-start'>
+    <main className='pb-10'>
+      <MyCarousel />
+      <div className='flex md:flex-row flex-col justify-between items-center px-20 mt-4 w-[100%] gap-3'>
+        <MainCard onClick={() => { setIsOpen(true); setSelectedCard('os') }} svg={<ObraSocialIcon />} title='OBRAS SOCIALES' body='Trabajamos con todas las obras sociales' />
+        <MainCard onClick={() => { setIsOpen(true); setSelectedCard('lo') }} svg={<LocationIcon height='80' />} title='SEDES' body='Conocé todas nuestras sedes.' />
+        <MainCard onClick={() => { setIsOpen(true); setSelectedCard('ss') }} svg={<ServiceIcon />} title='SERVICIOS' body='Conocé los servicios que brindamos.' />
+      </div>
 
-      <motion.div className='h-full w-full flex flex-col items-center justify-center gap-12 px-5'>
-
-        <div className='flex justify-center items-center py-5'>
-          <motion.img
-            animate={
-              {
-                scale: 2
-
-              }
-            }
-            transition={{ duration: 5 }}
-            src={logo} alt='Logo de AILAACC UEP 195'
-            className='w-32 md:w-72 opacity-25 -z-10 absolute'
-          />
-          <h1 className='md:text-8xl text-4xl flex flex-col font-bold text-black/75'>
-            A.I.L.A.A.C.C. <span className='text-2xl text-end md:text-4xl'>U.E.G.P. N˚ 195</span>
-          </h1>
-
-        </div>
-
-        <a href='#services'><Button classname='bg-customOrange border hover:bg-transparent hover:text-customOrange hover:border border-customOrange'>CONOCÉ NUESTROS SERVICIOS</Button></a>
-
-      </motion.div>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        {renderModal()}
+      </Modal>
 
     </main>
 

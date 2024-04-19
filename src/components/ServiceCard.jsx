@@ -8,7 +8,7 @@ export function ServiceCard ({ service }) {
     >
 
       <img className='rounded-full size-44 md:size-64' src={imgSrc} alt='' />
-      <h5 className='font-bold text-center text-sm md:text-2xl mt-4 text-black/80'>
+      <h5 className='font-bold text-center text-sm md:text-xl mt-4 text-black/80'>
         {name}
       </h5>
 
