@@ -19,8 +19,21 @@ export function TimeCounter () {
       if (!response.ok) {
         throw new Error('Network response was no ok')
       }
-      const data = await response.json()
-      console.log('Response', data)
+      // Leer la respuesta como un Blob
+      const blob = await response.blob()
+      // Crear una URL de objeto para el Blob
+      const url = await window.URL.createObjectURL(blob)
+      // Crear un enlace de descarga
+      const a = await document.createElement('a')
+      a.href = await url
+      a.download = await 'contadas.xlsx' // Nombre de archivo deseado
+      await document.body.appendChild(a)
+
+      // Simular un clic en el enlace
+      await a.click()
+
+      // Limpiar el enlace y la URL del objeto después de la descarga
+      window.URL.revokeObjectURL(url)
     } catch (error) {
       console.error('Error: ', error)
     }
