@@ -22,7 +22,7 @@ export default {
       },
       backgroundImage: {
         cetBg: 'linear-gradient(to right, rgb(49,49,49), rgb(200,85,22,.4)), url("./src/assets/img/img1.webp")',
-        saieBg: 'linear-gradient(to right, rgb(49,49,49), rgb(200,85,22,.4)), url("./src/assets/img/img2.webp")',
+        saieBg: 'linear-gradient(to right, rgb(49,49,49), rgb(200,85,22,.4)), url("./src/assets/img/img4.webp")',
         etBg: 'linear-gradient(to right, rgb(49,49,49), rgb(200,85,22,.4)), url("./src/assets/img/img3.webp")',
         diagnosticoBg: 'linear-gradient(to right, rgb(49,49,49), rgb(200,85,22,.4)), url("./src/assets/img/img4.webp")'
 

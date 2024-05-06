@@ -14,7 +14,6 @@ export function HomeSection () {
   const [selectedCard, setSelectedCard] = useState(null)
 
   const renderModal = () => {
-    console.log(selectedCard)
     switch (selectedCard) {
       case 'os':
         return (<ObrasSociales />)

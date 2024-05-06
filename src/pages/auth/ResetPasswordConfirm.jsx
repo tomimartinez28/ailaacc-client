@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Button, Label, TextInput } from 'flowbite-react'
+import { Label } from 'flowbite-react'
 import { resetPasswordConfirm } from '../../actions/auth'
+import { inputStyles } from '../../utils/inputStyles'
 
 const ResetPasswordConfirm = ({ match, resetPasswordConfirm }) => {
   const { uid } = useParams()
@@ -28,40 +29,45 @@ const ResetPasswordConfirm = ({ match, resetPasswordConfirm }) => {
   }
 
   return (
+    <div className='w-full h-screen flex flex-col items-center justify-start'>
 
-    <form className='space-y-6 w-1/2 text-white' onSubmit={e => onSubmit(e)}>
+      <form className='space-y-6 w-1/2 flex flex-col text-black/80 mt-20' onSubmit={e => onSubmit(e)}>
 
-      <div>
-        <div className='mb-2 block'>
-          <Label htmlFor='password' value='Contraseña' />
+        <div className='flex flex-col gap-1'>
+          <div className='mb-2 block'>
+            <Label htmlFor='password' value='Nueva contraseña' />
+          </div>
+          <input
+            className={inputStyles()}
+            name='newPassword'
+            type='password'
+            value={newPassword}
+            onChange={e => onChange(e)}
+            minLength='6'
+            required
+          />
+          <div className='mb-2 block'>
+            <Label htmlFor='password' value='Repita su nueva contraseña' />
+          </div>
+          <input
+            className={inputStyles()}
+            name='re_new_password'
+            type='password'
+            placeholder=''
+            value={reNewPassword}
+            onChange={e => onChange(e)}
+            minLength='6'
+            required
+          />
+
         </div>
-        <TextInput
-          name='new_password'
-          type='password'
-          placeholder='Nueva contraseña'
-          value={newPassword}
-          onChange={e => onChange(e)}
-          minLength='6'
-          required
-        />
-        <TextInput
-          name='re_new_password'
-          type='password'
-          placeholder='Confirmar contraseña'
-          value={reNewPassword}
-          onChange={e => onChange(e)}
-          minLength='6'
-          required
-        />
 
-      </div>
+        <div className='w-full'>
+          <button className='z-0 py-2 px-4 bg-customOrange text-backgroundColor rounded-md border-2 border-customOrange hover:bg-transparent hover:text-customOrange transition-all duration-150 font-semibold' type='submit'>Restablecer contraseña</button>
+        </div>
 
-      <div className='w-full'>
-        <Button type='submit'>Restablecer contraseña</Button>
-      </div>
-
-    </form>
-
+      </form>
+    </div>
   )
 }
 

@@ -6,8 +6,8 @@ import { SERVICES } from '../../const'
 
 export function MyCarousel () {
   return (
-    <div className='h-[400px] md:h-[400px]'>
-      <Carousel className=' rounded-none'>
+    <div className='h-[700px] md:h-[400px] overflow-visible'>
+      <Carousel>
         {
           SERVICES.map((service, index) => (
             <CarouselItem key={index} service={service} />

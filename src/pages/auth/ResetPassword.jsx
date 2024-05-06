@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Button, Label, TextInput } from 'flowbite-react'
+import { Label } from 'flowbite-react'
 import { resetPassword } from '../../actions/auth'
+import { inputStyles } from '../../utils/inputStyles'
 
 const ResetPassword = ({ resetPassword }) => {
   const [requestSent, setRequestSent] = useState(false)
@@ -28,27 +29,28 @@ const ResetPassword = ({ resetPassword }) => {
   // is the user authenticated? redirect to the home page
   return (
 
-    <div className='w-full h-screen flex flex-col items-center justify-center'>
+    <div className='w-full h-screen flex flex-col items-center justify-start'>
 
-      <form className='space-y-6 w-[300px] md:w-[400px] bg-[#fff] border-2 px-5 py-2 rounded-xl shadow-lg' onSubmit={e => onSubmit(e)}>
+      <form className='space-y-6 w-[300px] md:w-[400px] bg-[#fff] border-2 px-5 py-2 rounded-xl shadow-lg mt-40' onSubmit={e => onSubmit(e)}>
         <h3 className='text-xl font-medium text-gray-900 dark:text-white'>Recuperar contraseña</h3>
 
         <div>
           <div className='mb-2 block'>
             <Label htmlFor='email' value='Tu email' />
           </div>
-          <TextInput
+          <input
+            className={inputStyles()}
             name='email'
             type='email'
             value={email}
-            placeholder='tu_email@gmail.com'
+            placeholder='ejemplo@gmail.com'
             onChange={e => onChange(e)}
             required
           />
         </div>
 
         <div className='w-full'>
-          <Button type='submit'>Restablecer contraseña</Button>
+          <button className='z-0 py-2 px-4 bg-customOrange text-backgroundColor rounded-md border-2 border-customOrange hover:bg-transparent hover:text-customOrange transition-all duration-150 font-semibold' type='submit'>Ingresar</button>
         </div>
 
       </form>

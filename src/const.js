@@ -20,7 +20,7 @@ export const SERVICES = [
   {
     id: 4,
     name: 'DIAGNÓSTICO',
-    description: 'El Departamento de Diagnóstico se establece para proporcionar evaluaciones diagnósticas a niños que aún no tienen un diagnóstico definido y necesitan obtener el Certificado Único de Discapacidad del Iprodich para acceder al 100% de cobertura de la obra social. Nuestro objetivo es determinar el servicio más adecuado para cada niño, ya sea Estimulación Temprana, Integración Escolar o Centro Educativo Terapéutico, según las necesidades identificadas durante la evaluación.',
+    description: 'Orientado a proporcionar evaluaciones a niños que aún no tienen un diagnóstico definido y necesitan obtener el Certificado Único de Discapacidad del Iprodich para acceder al 100% de cobertura de la obra social. Nuestro objetivo es determinar el servicio más adecuado para cada niño, según las necesidades identificadas durante la evaluación.',
     imgSrc: 'bg-diagnosticoBg'
   }
 ]

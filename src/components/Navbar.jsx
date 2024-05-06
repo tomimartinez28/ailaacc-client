@@ -4,8 +4,9 @@ import { Link, useLocation } from 'react-router-dom'
 import { MenuButton } from './ui/MenuButton'
 import { connect } from 'react-redux'
 import logo from '../assets/logo/logo.png'
+import { Dropdown } from './ui/Dropdown'
 
-function Navbar ({ logout, isAuthenticated }) {
+function Navbar ({ logout, isAuthenticated, user }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // Función para determinar si se debe ocultar el botón del menú
@@ -51,22 +52,24 @@ function Navbar ({ logout, isAuthenticated }) {
 
   const authLinks = () => (
     <>
-
-      <button onClick={logout}>CERRAR SESIÓN</button>
-
+      {
+      user && <Dropdown logout={logout} username={`${user.name} ${user.last_name}`} />
+    }
     </>
   )
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
     if (!isMenuOpen) {
-      window.body.style.overflow = 'hidden'
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
     }
   }
 
   return (
     <>
-      <header className='flex items-center border justify-between px-5 md:h-[150px]'>
+      <header className='flex items-center border border-black/20 justify-between px-5 md:h-[150px]'>
 
         <a href='/'>
           <div className='flex justify-center items-center gap-2'>
@@ -104,9 +107,10 @@ function Navbar ({ logout, isAuthenticated }) {
           >
             <ul className='flex md:flex-row flex-col md:items-center md:gap-2 lg:gap-5 gap-12 md:text-sm text-xl text-nowrap'>
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#top' : '#top'} className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>INICIO</a>
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/services' : '/services'} className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>NUESTROS SERVICIOS</a>
+
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#about' : '#about'} className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>SOBRE NOSOTROS</a>
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#contact' : '#contact'} className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>CONTACO</a>
+              <a onClick={!hideMenuButton ? toggleMenu : undefined} href='/dashboard' className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>ADMINISTRACIÓN</a>
 
             </ul>
           </div>
@@ -137,7 +141,8 @@ function Navbar ({ logout, isAuthenticated }) {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  user: state.auth.user
 })
 
 export default connect(mapStateToProps, { logout })(Navbar)

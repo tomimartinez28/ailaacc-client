@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Button, Label, TextInput } from 'flowbite-react'
+import { Label } from 'flowbite-react'
 import { signUp } from '../../actions/auth'
+import { inputStyles } from '../../utils/inputStyles'
 
 const Signup = ({ signUp, isAuthenticated }) => {
   const [accountCreated, setAccountCreated] = useState(false)
@@ -42,8 +43,9 @@ const Signup = ({ signUp, isAuthenticated }) => {
           <div className='mb-2 block'>
             <Label htmlFor='name' value='Tu nombre' />
           </div>
-          <TextInput
+          <input
             name='name'
+            className={inputStyles()}
             type='text'
             value={name}
             placeholder='Tomas'
@@ -56,7 +58,8 @@ const Signup = ({ signUp, isAuthenticated }) => {
           <div className='mb-2 block'>
             <Label htmlFor='name' value='Tu apellido' />
           </div>
-          <TextInput
+          <input
+            className={inputStyles()}
             name='last_name'
             type='text'
             value={last_name}
@@ -70,11 +73,12 @@ const Signup = ({ signUp, isAuthenticated }) => {
           <div className='mb-2 block'>
             <Label htmlFor='email' value='Tu email' />
           </div>
-          <TextInput
+          <input
+            className={inputStyles()}
             name='email'
             type='email'
             value={email}
-            placeholder='tu_email@gmail.com'
+            placeholder='ejemplo@gmail.com'
             onChange={e => onChange(e)}
             required
           />
@@ -84,10 +88,10 @@ const Signup = ({ signUp, isAuthenticated }) => {
           <div className='mb-2 block'>
             <Label htmlFor='password' value='Contraseña' />
           </div>
-          <TextInput
+          <input
+            className={inputStyles()}
             name='password'
             type='password'
-            placeholder='**************'
             value={password}
             onChange={e => onChange(e)}
             minLength='6'
@@ -96,10 +100,10 @@ const Signup = ({ signUp, isAuthenticated }) => {
           <div className='mb-2 block'>
             <Label htmlFor='rePassword' value='Repita su contraseña' />
           </div>
-          <TextInput
+          <input
+            className={inputStyles()}
             name='rePassword'
             type='password'
-            placeholder='**************'
             value={rePassword}
             onChange={e => onChange(e)}
             minLength='6'
@@ -108,12 +112,12 @@ const Signup = ({ signUp, isAuthenticated }) => {
         </div>
 
         <div className='w-full'>
-          <Button type='submit'>Crear cuenta</Button>
+          <button className='z-0 py-2 px-4 bg-customOrange text-backgroundColor rounded-md border-2 border-customOrange hover:bg-transparent hover:text-customOrange transition-all duration-150 font-semibold' type='submit'>Crear cuenta</button>
         </div>
         <div className='flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300'>
           Ya tenes una cuenta?&nbsp;
-          <Link to='/login' className='text-cyan-700 hover:underline dark:text-cyan-500'>
-            Incia sesion
+          <Link to='/login' className='text-customOrange'>
+            Inciar sesion
           </Link>
         </div>
 

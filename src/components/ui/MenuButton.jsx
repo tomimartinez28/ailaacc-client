@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 export function MenuButton ({ onClick }) {
   return (
-    <motion.button whileHover={{ scale: 0.9 }} onClick={onClick} className='z-20 p-2 rounded-full border border-black/80 bg-black/80 text-[#f6f6f6]'>
+    <motion.button whileTap={{ scale: 0.75 }} onClick={onClick} className='z-20 p-2 rounded-full border border-black/80 bg-black/80 text-[#f6f6f6]'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
