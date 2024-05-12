@@ -5,14 +5,17 @@ export function CarouselItem ({ service }) {
       <div className='
       flex flex-col justify-center
       absolute bottom-0 w-full h-[30%]
-       backdrop-blur-sm
+    gap-2
       md:w-[40%] md:h-[50%] md:top-7 md:left-24
       p-2
-      bg-[#f6f6f6]/10
+      mb-1
+
      '
       >
-        <h2 className='md:text-2xl text-xl font-semibold text-black/90'>{service.name}</h2>
-        <p className='text-base md:text-base text-black/70'>{service.description}</p>
+        <div className='bg-customOrange/85 rounded-full  px-3 py-2 flex justify-center'>
+          <h2 className='md:text-2xl text-xl font-semibold text-black/75 text-center '>{service.name}</h2>
+        </div>
+        <p className='text-base md:text-base text-[#f6f6f6]/70 px-3 '>{service.description}</p>
 
       </div>
 
