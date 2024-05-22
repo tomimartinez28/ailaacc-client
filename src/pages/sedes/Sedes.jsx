@@ -14,8 +14,10 @@ export function Sedes () {
 
   return (
     <div className='flex flex-col items-center justify-center w-full h-full'>
-      <div className='grid grid-cols-2 w-[100%] text-black/80 overflow-hidden shadow-2xl rounded-xl'>
-        <div className=''>
+      <div className='md:grid md:grid-cols-2 md:h-auto w-[100%] text-black/80 md:overflow-hidden shadow-2xl rounded-xl
+      flex flex-col-reverse h-[400px]'
+      >
+        <div className='md:flex md:flex-col grid grid-cols-3'>
           {
             SEDES.map((sede, index) => (
               <SedeCard key={index} selected={selectedCard === index} onClick={() => handleCardClick(index)} title={sede.name} address={sede.address} imgSrc={sede.img ? sede.img : img5} />
@@ -23,7 +25,6 @@ export function Sedes () {
             )
           }
         </div>
-
         <div className='h-full flex flex-col p-5 bg-backgroundColor justify-between'>
           <div className='flex flex-col justify-between'>
             <h2 className='md:text-6xl text-2xl font-bold '>{name}</h2>

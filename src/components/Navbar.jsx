@@ -45,7 +45,7 @@ function Navbar ({ logout, isAuthenticated, user }) {
   const guestsLinks = () => (
     <>
       <Link to='/login'>
-        <button className='py-1 px-3 bg-customOrange border-2 border-customOrange hover:bg-transparent text-backgroundColor font-bold hover:text-black transition-all duration-700 rounded-full'>INICIAR SESIÓN</button>
+        <button className='py-1 px-3 bg-customOrange border-2 border-customOrange hover:bg-transparent text-backgroundColor font-bold hover:text-black transition-all duration-700 rounded-full text-sm'>INICIAR SESIÓN</button>
       </Link>
     </>
   )
@@ -106,11 +106,10 @@ function Navbar ({ logout, isAuthenticated, user }) {
           transition-all duration-1000`}
           >
             <ul className='flex md:flex-row flex-col md:items-center md:gap-2 lg:gap-5 gap-12 md:text-sm text-xl text-nowrap'>
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#top' : '#top'} className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>INICIO</a>
+              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#top' : '#top'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>INICIO</a>
 
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#about' : '#about'} className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>SOBRE NOSOTROS</a>
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#contact' : '#contact'} className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>CONTACO</a>
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href='/dashboard' className='hover:font-bold md:hover:text-customOrange transition-all duration-100 hover:scale-110'>ADMINISTRACIÓN</a>
+              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#about' : '#about'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SOBRE NOSOTROS</a>
+              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#contact' : '#contact'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>CONTACO</a>
 
             </ul>
           </div>

@@ -22,8 +22,8 @@ export function Dropdown ({ logout, username }) {
 
   return (
     <div ref={dropdownRef} className=''>
-      <button className='flex items-center gap-1 mb-2 py-2 px-3 rounded-md bg-customOrange text-backgroundColor' onClick={() => setIsOpen(!isOpen)}>
-        <UserIcon />
+      <button className='flex py-1 px-3 bg-customOrange border-2 border-customOrange hover:bg-transparent text-backgroundColor font-bold hover:text-black transition-all duration-700 rounded-full' onClick={() => setIsOpen(!isOpen)}>
+
         <p className='font-semibold text-sm'>{username}</p>
 
       </button>

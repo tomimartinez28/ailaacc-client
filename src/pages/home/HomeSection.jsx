@@ -35,7 +35,7 @@ export function HomeSection () {
 
     <main className='pb-10'>
       <MyCarousel />
-      <div className='flex md:flex-row flex-col justify-between items-center px-20 mt-4 w-[100%] gap-3'>
+      <div className='flex md:flex-row flex-col justify-between items-center px-20 mt-4 mb-4 w-[100%] md:h-[200px] gap-3'>
         <MainCard onClick={() => { setIsOpen(true); setSelectedCard('os') }} svg={<ObraSocialIcon />} title='OBRAS SOCIALES' body='Trabajamos con todas las obras sociales' />
         <MainCard onClick={() => { setIsOpen(true); setSelectedCard('lo') }} svg={<LocationIcon height='80' />} title='SEDES' body='Conocé todas nuestras sedes.' />
         <MainCard onClick={() => { setIsOpen(true); setSelectedCard('ss') }} svg={<ServiceIcon />} title='SERVICIOS' body='Conocé los servicios que brindamos.' />
