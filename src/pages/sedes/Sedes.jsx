@@ -41,7 +41,7 @@ export function Sedes () {
             </div>
           </div>
           <div className='rounded-lg overflow-hidden h-[300px] w-[100%]'>
-            <iframe src={map} width='100%' height='100%' allowFullScreen='' loading='lazy' referrerPolicy='no-referrer-when-downgrade' />
+            {map && <iframe src={map} width='100%' height='100%' allowFullScreen='' loading='lazy' referrerPolicy='no-referrer-when-downgrade' />}
           </div>
         </div>
       </div>
