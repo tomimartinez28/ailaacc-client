@@ -3,7 +3,7 @@ import { Carousel } from 'flowbite-react'
 
 export function ObrasSociales () {
   // Define el número de elementos por slide
-  const itemsPerSlide = 10
+  const itemsPerSlide = 4
 
   // Divide el array OBRAS_SOCIALES en partes iguales
   const slides = []
@@ -22,13 +22,13 @@ export function ObrasSociales () {
         {
           slides.map((slide, index) => {
             return (
-              <ul key={index} className='flex items-start justify-start gap-2 flex-wrap '>
+              <ul key={index} className='grid grid-cols-2 items-center justify-center gap-2 w-[60%]'>
                 {
                   slide.map((item, index) => {
                     return (
 
                       item.logo &&
-                        (<li key={index}><img className='md:size-24 size-12 bg-cover rounded-full shadow-sm border-2 border-customOrange/50 bg-white' src={item.logo} alt={`Logo de ${item.name}`} /> </li>)
+                        (<li key={index}><img className='md:size-24 size-22 bg-cover rounded-full shadow-sm border-2 border-customOrange/50 bg-white' src={item.logo} alt={`Logo de ${item.name}`} /> </li>)
 
                     )
                   })

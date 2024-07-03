@@ -32,7 +32,7 @@ export function ContactForm () {
             id='name'
             name='name'
             type='text'
-            className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-yellow-300 focus:ease-in'
+            className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-customOrange focus:ease-in text-black/70'
             {...register('name', {
               required: {
                 value: true,
@@ -43,7 +43,7 @@ export function ContactForm () {
 
           {
                         errors.name &&
-                          <span className='text-red-500 text-sm'>{errors.name.message}</span>
+                          <span className='text-sm'>{errors.name.message}</span>
                     }
 
         </div>
@@ -53,7 +53,7 @@ export function ContactForm () {
             id='lastname'
             name='lastname'
             type='text'
-            className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-yellow-300 focus:ease-in'
+            className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-customOrange focus:ease-in text-black/70'
             {...register('lastname', {
               required: {
                 value: true,
@@ -64,7 +64,7 @@ export function ContactForm () {
 
           {
                         errors.lastname &&
-                          <span className='text-red-500 text-sm'>{errors.lastname.message}</span>
+                          <span className='text-sm'>{errors.lastname.message}</span>
                     }
 
         </div>
@@ -75,7 +75,7 @@ export function ContactForm () {
           id='email'
           name='email'
           type='email'
-          className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-yellow-300 focus:ease-in'
+          className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-customOrange focus:ease-in text-black/70'
           {...register('email', {
             required: {
               value: true,
@@ -90,7 +90,7 @@ export function ContactForm () {
 
         {
                     errors.email &&
-                      <span className='text-red-500 text-sm'>{errors.email.message}</span>
+                      <span className='text-sm'>{errors.email.message}</span>
                 }
 
       </div>
@@ -100,7 +100,7 @@ export function ContactForm () {
           id='message'
           name='message'
           type='text'
-          className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-yellow-300 focus:ease-in'
+          className='bg-transparent w-full border-t-0 border-x-0 focus:border-none focus:ring-customOrange focus:ease-in text-black/70'
           {...register('message', {
             required: {
               value: true,
@@ -111,7 +111,7 @@ export function ContactForm () {
 
         {
                     errors.message &&
-                      <span className='text-red-500 text-sm'>{errors.message.message}</span>
+                      <span className='text-sm'>{errors.message.message}</span>
                 }
 
       </div>
