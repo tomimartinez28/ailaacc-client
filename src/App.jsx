@@ -9,6 +9,7 @@ import Activate from './pages/auth/Activate'
 import { Provider } from 'react-redux'
 import Layout from './hocs/Layout'
 import store from './store'
+import { Sedes } from './pages/sedes/Sedes'
 import { Admin } from './pages/admin/Admin'
 import { Missing } from './pages/home/Missing'
 import PrivateRoutes from './utils/PrivateRoutes'
@@ -26,6 +27,7 @@ function App () {
             <Route exact path='/reset-password' Component={ResetPassword} />
             <Route exact path='/password/reset/confirm/:uid/:token' Component={ResetPasswordConfirm} />
             <Route exact path='/activate/:uid/:token' Component={Activate} />
+            <Route exact path='/sedes' Component={Sedes} />
 
             {/* protected routes */}
             <Route element={<PrivateRoutes />}>

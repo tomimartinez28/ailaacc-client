@@ -1,20 +1,22 @@
-export function SedeCard ({ selected, onClick, title, address, imgSrc }) {
+import { LocationIcon } from '../../components/icons/LocationIcon'
+import { CalendarIcon } from '../../components/icons/CalendarIcon'
+export function SedeCard ({ sede, isEven }) {
   return (
-    <div
-      onClick={onClick}
-      className={`flex md:flex-row flex-col justify-center border h-[100px] w-full cursor-pointer ${selected ? ' bg-backgroundColor' : 'bg-[#f6f6f6] text-black/80'} hover:shadow-inner`}
-    >
+    <div className={`flex flex-row p-4 ${isEven ? '' : 'flex-row-reverse'} items-start justify-evenly mt-4`}>
 
-      <div className='md:h-full md:ml-10 md:mb-10
-      w-full h-full
-      flex flex-col justify-center md:items-start items-center'
-      >
-        <h2
-          className='text-base md:text-xl font-bold text-black/70'
-        >
-          {title}
-        </h2>
+      <div className='flex flex-col gap-4'>
+        <h2 className='md:text-4xl'>{sede.name}</h2>
+        <ul className='flex flex-col gap-1'>
+          <li className='flex'><LocationIcon height={20} />{sede.address}</li>
+          <li className='flex'><CalendarIcon height={20} />{sede.schedule}</li>
+        </ul>
+        <div className='flex gap-2'>
+          <button className='bg-customOrange border-2 p-2 text-backgroundColor hover:bg-transparent hover:text-black/80 border-customOrange rounded-full transition-all duration-250'>Ver mapa</button>
 
+        </div>
+      </div>
+      <div>
+        <img src={sede.img} alt={`Imagen de la sede de ${sede.name}`} className='rounded-md size-52' />
       </div>
 
     </div>

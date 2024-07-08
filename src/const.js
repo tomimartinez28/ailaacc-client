@@ -1,25 +1,25 @@
 export const SERVICES = [
   {
     id: 1,
-    name: 'CENTRO EDUCATIVO TERAPÉUTICO',
+    title: 'CENTRO EDUCATIVO TERAPÉUTICO',
     description: 'Educación adaptada a niños y jóvenes con discapacidades motrices, sensoriales y mentales, utilizando enfoques terapéuticos para facilitar su aprendizaje y desarrollo.',
     imgSrc: 'bg-cetBg'
   },
   {
     id: 2,
-    name: 'SERVICIO DE APOYO A LA INTEGRACIÓN ESCOLAR',
+    title: 'SERVICIO DE APOYO A LA INTEGRACIÓN ESCOLAR',
     description: 'Proporcionamos evaluación, programación y coordinación de servicios para niños con necesidades especiales en instituciones educativas regulares. Nos enfocamos en la enseñanza individualizada, planificación y supervisión mensual para maximizar el potencial de cada alumno',
     imgSrc: 'bg-saieBg'
   },
   {
     id: 3,
-    name: 'ESTIMULACIÓN TEMPRANA',
+    title: 'ESTIMULACIÓN TEMPRANA',
     description: 'Contamos con un equipo especializado en ayudar al desarrollo de los niños pequeños, brindando estrategias tanto para ellos como para sus familias, con el objetivo de alcanzar los hitos del desarrollo y promover la prevención como parte integral de la salud infantil.',
     imgSrc: 'bg-etBg'
   },
   {
     id: 4,
-    name: 'DIAGNÓSTICO',
+    title: 'DIAGNÓSTICO',
     description: 'Orientado a proporcionar evaluaciones a niños que aún no tienen un diagnóstico definido y necesitan obtener el Certificado Único de Discapacidad del Iprodich para acceder al 100% de cobertura de la obra social. Nuestro objetivo es determinar el servicio más adecuado para cada niño, según las necesidades identificadas durante la evaluación.',
     imgSrc: 'bg-diagnosticoBg'
   }
@@ -159,3 +159,9 @@ export const OBRAS_SOCIALES = [
   }
 
 ]
+
+export const SEDE_CAROUSEL_ITEM = {
+  title: 'CONOCÉ TODAS NUESTRAS SEDES',
+  imgSrc: 'bg-sedeBg'
+
+}
