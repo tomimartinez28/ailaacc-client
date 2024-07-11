@@ -35,7 +35,7 @@ export function HomeSection () {
         <MainCard onClick={() => { setIsOpen(true); setSelectedCard('os') }} imgSrc={os} title='OBRAS SOCIALES' body='Trabajamos con todas las obras sociales' />
         <a href='/sedes'>
 
-          <MainCard onClick={() => { setIsOpen(true); setSelectedCard('lo') }} imgSrc={location} title='SEDES' body='Conocé todas nuestras sedes.' />
+          <MainCard imgSrc={location} title='SEDES' body='Conocé todas nuestras sedes.' />
         </a>
         <MainCard onClick={() => { setIsOpen(true); setSelectedCard('work') }} imgSrc={workwithus} title='TRABAJA CON NOSOTROS' body='' />
       </div>

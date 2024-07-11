@@ -30,7 +30,7 @@ export const SEDES = [
     name: 'Central - Sáenz Peña',
     address: 'Mariano Moreno 551',
     schedule: '07:00 a 20:00',
-    img: '',
+    img: 'src/assets/img/sedeCentral.webp',
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.6538943910646!2d-60.44410808890216!3d-26.787300376625026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94412d1e0d6f525d%3A0xe541031f3ff24f23!2sAILAACC%20UEP%20N%C2%BA195!5e0!3m2!1ses!2sar!4v1713197365423!5m2!1ses!2sar'
   },
   {
