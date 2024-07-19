@@ -9,7 +9,7 @@ export function Sedes () {
     <div className=''>
 
       <SedesCarousel />
-      <div className='flex flex-col gap-20 mt-10'>
+      <div className='flex flex-col gap-20 mt-10 px-4'>
         {
         SEDES.map((sede, index) => {
           return (

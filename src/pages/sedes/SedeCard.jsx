@@ -10,10 +10,10 @@ export function SedeCard ({ sede, isEven }) {
     setIsOpen(false)
   }
   return (
-    <div className={`flex md:flex-row flex-col w-[80%]p-4 ${isEven ? '' : 'md:flex-row-reverse'} items-start justify-evenly mt-4`}>
+    <div className={`flex md:flex-row flex-col w-[80%]p-4 ${isEven ? '' : 'md:flex-row-reverse'} items-start justify-evenly mt-4 gap-5`}>
 
       <motion.div
-        initial={{ x: isEven ? -500 : 500, opacity: 0 }}
+        initial={{ x: isEven ? -100 : 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 2 }}
         viewport={{ once: true }}
@@ -26,15 +26,16 @@ export function SedeCard ({ sede, isEven }) {
           <li className='flex gap-2'><CalendarIcon height={20} />{sede.schedule}</li>
         </ul>
         <div className='flex gap-2'>
-          <button onClick={() => setIsOpen(true)} className='bg-customOrange border-2 p-2 text-backgroundColor hover:bg-transparent hover:text-black/80 border-customOrange rounded-full transition-all duration-250'>Ver mapa</button>
+          <button onClick={() => setIsOpen(true)} className='bg-customOrange md:text-base text-sm border-2 p-2 text-backgroundColor hover:bg-transparent hover:text-black/80 border-customOrange rounded-full transition-all duration-250'>Ver mapa</button>
 
         </div>
       </motion.div>
       <motion.div
-        initial={{ x: isEven ? 500 : -500, opacity: 0 }}
+        initial={{ x: isEven ? 100 : -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 2 }}
         viewport={{ once: true }}
+
       >
         <img src={sede.img} alt={`Imagen de la sede de ${sede.name}`} className='md:size-[400px] size-[200px] shadow-lg rounded-sm hover:scale-105 transition-all duration-500' />
       </motion.div>
