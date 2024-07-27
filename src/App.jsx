@@ -22,15 +22,16 @@ function App () {
           <Routes>
             {/* public routes */}
             <Route exact path='/' Component={HomePage} />
-            <Route exact path='/login' Component={Login} />
-            <Route exact path='/signup' Component={Signup} />
-            <Route exact path='/reset-password' Component={ResetPassword} />
-            <Route exact path='/password/reset/confirm/:uid/:token' Component={ResetPasswordConfirm} />
-            <Route exact path='/activate/:uid/:token' Component={Activate} />
+
             <Route exact path='/sedes' Component={Sedes} />
 
             {/* protected routes */}
             <Route element={<PrivateRoutes />}>
+              <Route exact path='/login' Component={Login} />
+              <Route exact path='/signup' Component={Signup} />
+              <Route exact path='/reset-password' Component={ResetPassword} />
+              <Route exact path='/password/reset/confirm/:uid/:token' Component={ResetPasswordConfirm} />
+              <Route exact path='/activate/:uid/:token' Component={Activate} />
               <Route exact path='/dashboard' Component={Admin} />
             </Route>
 

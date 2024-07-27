@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Checkbox, Label } from 'flowbite-react'
@@ -10,7 +10,15 @@ const Login = ({ login, isAuthenticated }) => {
     email: '',
     password: ''
   })
-  const [formError, setFormError] = useState()
+  const [formError, setFormError] = useState(false)
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      setFormError(false)
+    } else {
+      setFormError(true)
+    }
+  }, [isAuthenticated])
 
   const { email, password } = formData
 
@@ -23,9 +31,6 @@ const Login = ({ login, isAuthenticated }) => {
     e.preventDefault()
 
     login(email, password)
-    setTimeout(() => {
-      !isAuthenticated && setFormError(true)
-    }, 100)
   }
 
   if (isAuthenticated) {
