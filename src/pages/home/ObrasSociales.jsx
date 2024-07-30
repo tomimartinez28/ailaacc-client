@@ -13,7 +13,7 @@ export function ObrasSociales () {
 
   return (
     <div className='w-[100%] min-h-[450px] grid grid-cols-1 md:grid-cols-2 items-center bg-backgroundColor p-5 rounded-xl'>
-      <div>
+      <div className=''>
         <h2 className='text-black/70 text-3xl md:text-6xl '>Trabajamos con <span className='text-customOrange'>todas</span> las obras sociales.</h2>
       </div>
 
@@ -28,8 +28,11 @@ export function ObrasSociales () {
                     return (
 
                       item.logo &&
-                        (<li key={index}><img className='md:size-24 size-22 bg-cover rounded-full shadow-sm border-2 border-customOrange/50 bg-white' src={item.logo} alt={`Logo de ${item.name}`} /> </li>)
-
+                        (<li key={index}><div
+                          className='md:h-28 w-28 h-28 bg-contain bg-no-repeat bg-center rounded-full shadow-sm border-2 border-customOrange '
+                          style={{ backgroundImage: `url(${item.logo})` }}
+                                         />
+                        </li>)
                     )
                   })
                 }

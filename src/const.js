@@ -74,88 +74,88 @@ export const SEDES = [
 export const OBRAS_SOCIALES = [
   {
     name: 'ASE',
-    logo: 'src/assets/os/ase.webp'
+    logo: '/src/assets/os/ase.webp'
   },
 
   {
     name: 'INCLUIR SALUD',
-    logo: 'src/assets/os/incluir.webp'
+    logo: '/src/assets/os/incluir.webp'
   },
   {
     name: 'INSSSEP',
-    logo: 'src/assets/os/insssep.webp'
+    logo: '/src/assets/os/insssep.webp'
   },
   {
     name: 'IOSFA',
-    logo: 'src/assets/os/iosfa.webp'
+    logo: '/src/assets/os/iosfa.webp'
   },
 
   {
     name: 'JERÁRQUICOS',
-    logo: 'src/assets/os/jerarquicos.webp'
+    logo: '/src/assets/os/jerarquicos.webp'
   },
   {
     name: 'OSFE',
-    logo: 'src/assets/os/osfe.webp'
+    logo: '/src/assets/os/osfe.webp'
   },
   {
     name: 'OSDE',
-    logo: 'src/assets/os/osde.webp'
+    logo: '/src/assets/os/osde.webp'
   },
   {
     name: 'OSDEPYM',
-    logo: 'src/assets/os/osdepym.webp'
+    logo: '/src/assets/os/osdepym.webp'
   },
   {
     name: 'OSECAC',
-    logo: 'src/assets/os/osecac.webp'
+    logo: '/src/assets/os/osecac.webp'
   },
   {
     name: 'OSFATLYF',
-    logo: 'src/assets/os/osfatlyf.webp'
+    logo: '/src/assets/os/osfatlyf.webp'
   },
   {
     name: 'OSIAD',
-    logo: 'src/assets/os/osiad.webp'
+    logo: '/src/assets/os/osiad.webp'
   },
 
   {
     name: 'OSPEGAP',
-    logo: 'src/assets/os/ospegap.webp'
+    logo: '/src/assets/os/ospegap.webp'
   },
   {
     name: 'OSPIDA',
-    logo: 'src/assets/os/ospida.webp'
+    logo: '/src/assets/os/ospida.webp'
   },
 
   {
     name: 'OSPLAD',
-    logo: 'src/assets/os/osplad.webp'
+    logo: '/src/assets/os/osplad.webp'
   },
   {
     name: 'OSPRERA',
-    logo: 'src/assets/os/osprera.webp'
+    logo: '/src/assets/os/osprera.webp'
   },
   {
     name: 'OSPTV',
-    logo: 'src/assets/os/osptv.webp'
+    logo: '/src/assets/os/osptv.webp'
   },
   {
     name: 'SANCOR',
-    logo: 'src/assets/os/sancor.webp'
+    logo: '/src/assets/os/sancor.webp'
   },
 
   {
     name: 'SPF',
-    logo: 'src/assets/os/spf.webp'
+    logo: '/src/assets/os/spf.webp'
   },
   {
     name: 'UNION PERSONAL',
-    logo: 'src/assets/os/unionpersonal.webp'
+    logo: '/src/assets/os/unionpersonal.webp'
   },
   {
     name: 'GALENO',
-    logo: 'src/assets/os/galeno.webp'
+    logo: '/src/assets/os/galeno.webp'
   }
 
 ]

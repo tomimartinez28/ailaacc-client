@@ -128,9 +128,7 @@ function Navbar ({ logout, isAuthenticated, user }) {
                 )
 
               : (
-                <div className=''>
-                  {isAuthenticated ? authLinks() : guestsLinks()}
-                </div>
+                <div className='' />
                 )
           }
 
