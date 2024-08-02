@@ -5,16 +5,12 @@ import { SocialPill } from '../../components/ui/SocialPill'
 import { InstagramIcon } from '../../components/icons/InstagramIcon'
 import { FacebookIcon } from '../../components/icons/FacebookIcon'
 import { LinkedinIcon } from '../../components/icons/LinkedinIcon'
-import { motion } from 'framer-motion'
 
 export function ContactSection () {
   return (
     <section className='md:h-[600px] h-[750px] p-4 flex flex-col items-center justify-center bg-customOrange' id='contact'>
 
       <div
-        initial={{ scale: 0.9 }}
-        whileInView={{ scale: 1 }}
-        transition={{ duration: 1 }}
         className='grid md:grid-cols-2 md:gap-32 grid-cols-1 justify-center bg-backgroundColor p-9 rounded-xl text-customOrange'
       >
 
