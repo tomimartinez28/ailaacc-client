@@ -11,7 +11,7 @@ export function ContactSection () {
   return (
     <section className='md:h-[600px] h-[750px] p-4 flex flex-col items-center justify-center bg-customOrange' id='contact'>
 
-      <motion.div
+      <div
         initial={{ scale: 0.9 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 1 }}
@@ -41,7 +41,7 @@ export function ContactSection () {
         </div>
 
         <ContactForm />
-      </motion.div>
+      </div>
 
     </section>
   )

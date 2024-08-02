@@ -44,12 +44,14 @@ export const StickyScroll = ({
     '#ff6432',
     '#ff6432',
     '#ff6432',
+  
   ]
 
   const backgroundColors = [
     "#f8f1de",
     "#f8f1de",
     "#f8f1de",
+    
     
   ];
   const linearGradients = [

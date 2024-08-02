@@ -13,6 +13,9 @@ export function AboutSection () {
     },
     {
       title: 'MISION', description: 'Garantizamos el derecho a la educación para niños y jóvenes con discapacidad, promoviendo un modelo social que elimina barreras de aprendizaje. Trabajamos en equipo con diversas disciplinas para ofrecer un abordaje personalizado y flexible. Fomentamos la inclusión en la comunidad y en actividades extracurriculares como arte, música y deporte, generando igualdad de oportunidades y desarrollo integral.', content: <img src={img3} />
+    },
+    {
+      title: '', description: '', content: <img src='' />
     }
 
   ]

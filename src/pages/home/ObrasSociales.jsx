@@ -22,21 +22,23 @@ export function ObrasSociales () {
         {
           slides.map((slide, index) => {
             return (
-              <ul key={index} className='grid grid-cols-2 items-center justify-center gap-2 w-[60%]'>
+              <div key={index} className='grid grid-cols-2 items-center justify-center gap-2 w-[80%]'>
                 {
                   slide.map((item, index) => {
                     return (
 
                       item.logo &&
-                        (<li key={index}><div
-                          className='md:h-28 w-28 h-28 bg-contain bg-no-repeat bg-center rounded-full shadow-sm border-2 border-customOrange '
-                          style={{ backgroundImage: `url(${item.logo})` }}
-                                         />
-                        </li>)
+                        (
+                          <div
+                            key={index}
+                            className='md:size-44 size-24 bg-contain bg-no-repeat bg-center rounded-full'
+                            style={{ backgroundImage: `url(${item.logo})` }}
+                          />
+                        )
                     )
                   })
                 }
-              </ul>
+              </div>
             )
           })
         }
