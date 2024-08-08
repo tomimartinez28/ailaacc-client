@@ -7,6 +7,8 @@ import { Spinner } from '../../components/ui/Spinner'
 export function ContactForm () {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
   const [loading, setLoading] = useState(false)
+  const [dataSended, setDataSended] = useState(false)
+  const [dataSendError, setDataSendError] = useState(false)
 
   const onSubmit = handleSubmit(data => {
     setLoading(true)
@@ -15,9 +17,23 @@ export function ContactForm () {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
-    }).then(() => {
-      console.log('Datos enviados', data)
+    }).then(response => {
+      if (response.ok) {
+        console.log('Datos enviados correctamente')
+        setDataSended(true)
+        setDataSendError(false)
+        setLoading(false)
+      } else {
+        console.log('Error al enviar los datos')
+        setLoading(false)
+        setDataSended(false)
+        setDataSendError(true)
+      }
+    }).catch(error => {
+      console.error('Error al enviar los datos', error)
       setLoading(false)
+      setDataSended(false)
+      setDataSendError(true)
     })
 
     reset()
@@ -116,13 +132,23 @@ export function ContactForm () {
 
       </div>
 
-      {loading &&
-        <div role='status'>
-          <Spinner />
-          <span className='sr-only'>Enviando...</span>
-        </div>}
+      <div className='flex items-center gap-2'>
+        <motion.button whileHover={{ scale: 0.9 }} className='rounded-full bg-customOrange text-[#f6f6f6] w-[100px] h-12 font-semibold' type='submit'>ENVIAR</motion.button>
+        {loading &&
+          <div role='status' className='w-full flex items-center justify-center'>
+            <Spinner />
+            <span className='sr-only'>Enviando...</span>
+          </div>}
 
-      <motion.button whileHover={{ scale: 0.9 }} className='rounded-full bg-customOrange text-[#f6f6f6] w-[100px] h-12 font-semibold' type='submit'>ENVIAR</motion.button>
+        {
+        dataSended && <p className=' text-green-700'>Mensaje enviado correctamente, te enviaremos un correo a la brevedad.</p>
+
+      }
+        {
+        dataSendError && <p>Error al enviar los datos, intenta nuevamente.</p>
+      }
+      </div>
+
     </form>
   )
 }

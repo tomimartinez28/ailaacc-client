@@ -26,7 +26,7 @@ export function SedeCard ({ sede, isEven }) {
           <li className='flex gap-2'><CalendarIcon height={20} />{sede.schedule}</li>
         </ul>
         <div className='flex gap-2'>
-          <button onClick={() => setIsOpen(true)} className='bg-customOrange md:text-base text-sm border-2 p-2 text-backgroundColor hover:bg-transparent hover:text-black/80 border-customOrange rounded-full transition-all duration-250'>Ver mapa</button>
+          <button onClick={() => setIsOpen(true)} className='bg-backgroundColor md:text-base text-sm border-2 p-2 text-black/80 hover:bg-customOrange hover:text-backgroundColor border-customOrange rounded-full transition-all duration-250'>Ver mapa</button>
 
         </div>
       </motion.div>

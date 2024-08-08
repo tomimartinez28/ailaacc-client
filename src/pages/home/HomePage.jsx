@@ -6,6 +6,7 @@ export function HomePage () {
   return (
     <>
       <HomeSection />
+
       <AboutSection />
       <ContactSection />
 
