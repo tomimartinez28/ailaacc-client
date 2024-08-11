@@ -3,7 +3,7 @@ import { logout } from '../actions/auth'
 import { Link, useLocation } from 'react-router-dom'
 import { MenuButton } from './ui/MenuButton'
 import { connect } from 'react-redux'
-import logo from '../assets/logo/logo.png'
+import { WrittenLogo } from './ui/WrittenLogo'
 import { Dropdown } from './ui/Dropdown'
 
 function Navbar ({ logout, isAuthenticated, user }) {
@@ -70,19 +70,7 @@ function Navbar ({ logout, isAuthenticated, user }) {
   return (
     <>
       <header className='flex items-center border border-black/20 justify-between px-5 md:h-[150px]'>
-
-        <a href='/'>
-          <div className='flex justify-center items-center gap-2'>
-            <img
-              src={logo} alt='Logo de AILAACC UEP 195'
-              className='w-12'
-            />
-            <h1 className='text-xl md:text-4xl flex flex-col font-bold text-black/75 text-nowrap'>
-              AILAACC <span className='text-base text-end'>U.E.G.P. N˚ 195</span>
-            </h1>
-
-          </div>
-        </a>
+        <WrittenLogo />
 
         <nav className='flex px-2 text-sm md:justify-center items-center justify-between z-10'>
 

@@ -6,10 +6,9 @@ import { SedesCarousel } from '../../components/ui/SedesCarousel'
 export function Sedes () {
   return (
 
-    <div className='bg-[url("/src/assets/svg/wavy-bg.svg")] bg-no-repeat bg-cover h-full'>
-
+    <div className='bg-[url("/src/assets/svg/wavy-bg.svg")] bg-transparent bg-no-repeat bg-cover h-full'>
       <SedesCarousel />
-      <div className='flex flex-col gap-20 mt-10 px-4'>
+      <div className='flex flex-col gap-20 mt-10 px-4 py-8'>
         {
         SEDES.map((sede, index) => {
           return (
@@ -17,9 +16,7 @@ export function Sedes () {
           )
         })
       }
-
       </div>
-
     </div>
   )
 }

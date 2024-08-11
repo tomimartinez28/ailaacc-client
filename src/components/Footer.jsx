@@ -1,32 +1,76 @@
-import { useLocation } from 'react-router-dom'
+import { WrittenLogo } from './ui/WrittenLogo'
+import { WppIcon } from './icons/WppIcon'
+import { FacebookIcon } from './icons/FacebookIcon'
+import { LinkedinIcon } from './icons/LinkedinIcon'
+import { InstagramIcon } from './icons/InstagramIcon'
+import useWindowDimensions from '../customHooks/useWindowDimensions'
 
 export function Footer () {
-  const location = useLocation()
+  const location = window.location.pathname
+  const { width } = useWindowDimensions()
+
+  const CustomHR = () => {
+    if (width < 768) {
+      return (
+        <div className='w-full flex items-center justify-center'>
+          <hr className='w-52 border-black/30' />
+        </div>
+      )
+    }
+  }
 
   return (
-    <div className={`${location.pathname === '/' ? 'bg-customOrange' : 'bg-transparent'} p-4 `}>
 
-      <footer className='bg-black/20 rounded-lg shadow'>
-        <div className='w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between text-[#f6f6f6]'>
-          <span className='text-sm sm:text-center dark:text-gray-400'>© 2024 <a href='https://flowbite.com/' className='hover:underline'>A.I.L.A.A.C.C.</a> All Rights Reserved.
-          </span>
-          <ul className='flex flex-wrap items-center mt-3 text-sm font-medium sm:mt-0'>
-            <li>
-              <a href='#about' className='hover:underline me-4 md:me-6'>Sobre nosotros</a>
-            </li>
-            <li>
-              <a href='#' className='hover:underline me-4 md:me-6'>Politicas de privacidad</a>
-            </li>
-            <li>
-              <a href='#' className='hover:underline me-4 md:me-6'>Licensing</a>
-            </li>
-            <li>
-              <a href='#' className='hover:underline'>Contact</a>
-            </li>
-          </ul>
+    <footer className='
+    flex flex-col
+    gap-5
+    items-center justify-around
+    w-full md:h-[450px] h-[600px]
+    bg-backgroundColor
+    text-black/70'
+
+    >
+      <div className='grid md:grid-cols-3 grid-cols-1 w-full gap-8 items-center'>
+        <div className='md:h-16  flex flex-col items-center justify-center md:border-r-[2px]  border-black/30 py-4'>
+          <WrittenLogo />
         </div>
-      </footer>
-    </div>
+        <CustomHR />
+
+        <div className='md:h-16 flex items-center justify-center gap-4 md:border-r-[2px]  border-black/30 py-4'>
+          <WppIcon size={width < 768 ? 30 : 50} />
+          <div className='flex flex-col gap-2 md:text-base text-sm'>
+            <p>¿Tenés consultas?</p>
+            <p className=' md:text-2xl text-xl text-black/80'>3644 359654</p>
+            <p>Lunes a viernes de 7 a 20hs.</p>
+          </div>
+        </div>
+        <CustomHR />
+
+        <ul className='md:h-16 flex flex-col items-center justify-center gap-2 py-4 md:text-base text-sm'>
+          <li>
+            <a href={`${location === '/sedes' ? '/#about' : '#about'}`} className='hover:text-customOrange'>SOBRE NOSOTROS</a>
+          </li>
+          <li>
+            <a href='/sedes' className='hover:text-customOrange'>NUESTRAS SEDES</a>
+          </li>
+          <li>
+            <a href={`${location === '/sedes' ? '/#contact' : '#contact'}`} className='hover:text-customOrange'>CONTACTO</a>
+          </li>
+        </ul>
+
+      </div>
+      <div className='flex flex-col items-center gap-4'>
+
+        <div className='flex flex-col items-center'>
+          <div className='flex gap-3'>
+            <a href='https://www.facebook.com/profile.php?id=100083364459405' target='_blank' rel='noreferrer' className='hover:text-customOrange'><FacebookIcon size={28} /></a>
+            <a href='https://www.linkedin.com/company/ailaacc/' target='_blank' rel='noreferrer' className='hover:text-customOrange'><LinkedinIcon size={28} /></a>
+            <a href='https://www.instagram.com/ailaacc_sp/' target='_blank' rel='noreferrer' className='hover:text-customOrange'><InstagramIcon size={28} /></a>
+          </div>
+          <p className=' font-thin'>Copyright. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
 
   )
 }

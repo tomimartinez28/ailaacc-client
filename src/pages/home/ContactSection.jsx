@@ -17,20 +17,20 @@ export function ContactSection () {
         <div className=''>
           <h3 className='lg:text-6xl text-4xl font-extrabold'>NO DUDES EN <br />CONTACTARNOS!</h3>
 
-          <div className='flex gap-2 mt-5 md:text-xl'>
-            <WppIcon />
-            <p>(+54) 3644-338436</p>
+          <div className='flex gap-2 items-center mt-5 md:text-xl'>
+            <WppIcon size={24} />
+            <p>(+54)3644359654</p>
           </div>
-          <div className='flex gap-2 mt-2 md:text-xl'>
-            <MailIcon />
-            <p>administracion@ailaaccuep195.com</p>
+          <div className='flex gap-2 items-center mt-2 md:text-xl'>
+            <MailIcon size={24} />
+            <p>admisioneingresosailaacc195@gmail.com</p>
 
           </div>
           <ul className='w-full flex gap-4 items-center justify-center mt-6 md:justify-start'>
 
-            <a href='https://www.instagram.com/ailaacc_sp/' target='_blank' rel='noreferrer'><SocialPill> <InstagramIcon /> </SocialPill></a>
-            <a href='https://www.facebook.com/profile.php?id=100083364459405' target='_blank' rel='noreferrer'><SocialPill> <FacebookIcon /> </SocialPill></a>
-            <a href='https://www.linkedin.com/company/ailaacc/' target='_blank' rel='noreferrer'><SocialPill><LinkedinIcon /></SocialPill></a>
+            <a href='https://www.instagram.com/ailaacc_sp/' target='_blank' rel='noreferrer'><SocialPill> <InstagramIcon size={24} /> </SocialPill></a>
+            <a href='https://www.facebook.com/profile.php?id=100083364459405' target='_blank' rel='noreferrer'><SocialPill> <FacebookIcon size={24} /> </SocialPill></a>
+            <a href='https://www.linkedin.com/company/ailaacc/' target='_blank' rel='noreferrer'><SocialPill><LinkedinIcon size={24} /></SocialPill></a>
 
           </ul>
 
