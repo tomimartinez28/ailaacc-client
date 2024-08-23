@@ -25,7 +25,7 @@ export function Footer () {
     flex flex-col
     gap-5
     items-center justify-around
-    w-full md:h-[450px] h-[600px]
+    w-full md:h-[350px] h-[600px]
     bg-backgroundColor
     text-black/70'
 
@@ -46,17 +46,15 @@ export function Footer () {
         </div>
         <CustomHR />
 
-        <ul className='md:h-16 flex flex-col items-center justify-center gap-2 py-4 md:text-base text-sm'>
-          <li>
+        <div className='md:h-16 flex flex-col items-center justify-center gap-2 py-4 md:text-base text-sm'>
+          <div className='flex flex-col gap-2'>
             <a href={`${location === '/sedes' ? '/#about' : '#about'}`} className='hover:text-customOrange'>SOBRE NOSOTROS</a>
-          </li>
-          <li>
+
             <a href='/sedes' className='hover:text-customOrange'>NUESTRAS SEDES</a>
-          </li>
-          <li>
+
             <a href={`${location === '/sedes' ? '/#contact' : '#contact'}`} className='hover:text-customOrange'>CONTACTO</a>
-          </li>
-        </ul>
+          </div>
+        </div>
 
       </div>
       <div className='flex flex-col items-center gap-4'>

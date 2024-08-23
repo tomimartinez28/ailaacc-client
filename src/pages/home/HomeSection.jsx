@@ -34,7 +34,6 @@ export function HomeSection () {
       <div className='flex md:flex-row flex-col justify-between items-center px-20 mt-4 mb-4 w-[100%] h-[800px] md:h-[350px] gap-10 md:gap-3 '>
         <MainCard onClick={() => { setIsOpen(true); setSelectedCard('os') }} imgSrc={os} title='OBRAS SOCIALES' body='Trabajamos con todas las obras sociales' />
         <a href='/sedes'>
-
           <MainCard imgSrc={location} title='SEDES' body='Conocé todas nuestras sedes.' />
         </a>
         <MainCard onClick={() => { setIsOpen(true); setSelectedCard('work') }} imgSrc={workwithus} title='TRABAJA CON NOSOTROS' body='' />

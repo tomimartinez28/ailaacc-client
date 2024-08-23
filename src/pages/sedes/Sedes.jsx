@@ -8,7 +8,7 @@ export function Sedes () {
 
     <div className='bg-[url("/src/assets/svg/wavy-bg.svg")] bg-transparent bg-no-repeat bg-cover h-full'>
       <SedesCarousel />
-      <div className='flex flex-col gap-20 mt-10 px-4 py-8'>
+      <div className='flex flex-col gap-20 mt-10 px-10 py-8'>
         {
         SEDES.map((sede, index) => {
           return (

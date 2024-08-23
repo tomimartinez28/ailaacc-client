@@ -10,7 +10,7 @@ export function SedeCard ({ sede, isEven }) {
     setIsOpen(false)
   }
   return (
-    <div className={`flex md:flex-row flex-col w-[80%]p-4 ${isEven ? '' : 'md:flex-row-reverse'} items-start justify-evenly mt-4 gap-5`}>
+    <div className={`flex md:flex-row flex-col p-4 ${isEven ? '' : 'md:flex-row-reverse'} items-start justify-evenly mt-4 gap-5`}>
 
       <motion.div
         initial={{ x: isEven ? -100 : 100, opacity: 0 }}
@@ -37,7 +37,7 @@ export function SedeCard ({ sede, isEven }) {
         viewport={{ once: true }}
 
       >
-        <img src={sede.img} alt={`Imagen de la sede de ${sede.name}`} className='md:size-[400px] size-[200px] shadow-2xl rounded-2xl hover:scale-105 transition-all duration-500' />
+        <img src={sede.img} alt={`Imagen de la sede de ${sede.name}`} className='md:size-[400px] size-[200px] shadow-2xl rounded-2xl' />
       </motion.div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <div className='w-full h-full flex items-center justify-center'>
