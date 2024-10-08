@@ -35,35 +35,35 @@ export const SEDES = [
   },
   {
     name: 'Quitilipi',
-    address: 'La Pampa 320 | Quitilipi - Chaco',
+    address: 'La Pampa 320',
     schedule: '08:00 a 12:00 - 16:00 a 20:00',
-    img: '',
+    img: 'src/assets/img/sedeCentral.webp',
     map: 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d427.060694602559!2d-60.22171923223497!3d-26.871151448495976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1713197538677!5m2!1ses!2sar'
   },
   {
     name: 'Villa Ángela',
-    address: 'Presidente Perón 547 | Villa Ángela - Chaco',
+    address: 'Presidente Perón 547',
     schedule: '08:00 a 12:00 - 16:00 a 20:00',
     img: 'src/assets/sedes/villaangela.webp',
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.748955613187!2d-60.720869888875356!3d-27.570300676162418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9447a9d2591637bb%3A0x479e5e952b2a0886!2sAv.%20Juan%20Domingo%20Per%C3%B3n%20547%2C%20Villa%20Angela%2C%20Chaco!5e0!3m2!1ses!2sar!4v1713197567911!5m2!1ses!2sar'
   },
   {
     name: 'Tres Isletas',
-    address: 'Alberdi 372 | Tres Isletas - Chaco',
+    address: 'Alberdi 372',
     schedule: '08:00 a 12:00 - 16:00 a 20:00',
     img: 'src/assets/sedes/tresisletas.webp',
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.621971671091!2d-60.43439798891726!3d-26.338737776898018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94411b0312e70a57%3A0x842a226ff6fb704b!2sAILAACC%20-%20Apoyo%20a%20la%20Integraci%C3%B3n%20Escolar%20y%20Estimulaci%C3%B3n%20Temprana!5e0!3m2!1ses!2sar!4v1713197596743!5m2!1ses!2sar'
   },
   {
     name: 'Charata',
-    address: 'Almirante Brown 195 | Charata - Chaco',
+    address: 'Almirante Brown 195',
     schedule: '08:00 a 12:00 - 16:00 a 20:00',
     img: 'src/assets/sedes/charata.webp',
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.1619677366793!2d-61.19725988888777!3d-27.214064176370623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94475ba38c8ed5f5%3A0x6e3507b2761a0d5a!2sAlmte.%20Brown%20195%2C%20Charata%2C%20Chaco!5e0!3m2!1ses!2sar!4v1713197644562!5m2!1ses!2sar'
   },
   {
     name: 'Las Breñas',
-    address: 'Victor Mercante 956 | Las Breñas - Chaco',
+    address: 'Victor Mercante 956',
     schedule: '08:00 a 12:00 - 16:00 a 20:00',
     img: 'src/assets/sedes/lasbreñas.webp',
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3552.2044483737045!2d-61.08696197364537!3d-27.0868487478511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94474efdc2a23c07%3A0x6d51c824516e9cfd!2sMercante%20956%2C%20Las%20Bre%C3%B1as%2C%20Chaco!5e0!3m2!1ses!2sar!4v1713197689985!5m2!1ses!2sar'

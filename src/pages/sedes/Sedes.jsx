@@ -8,11 +8,11 @@ export function Sedes () {
 
     <div className='bg-[url("/src/assets/svg/wavy-bg.svg")] bg-transparent bg-no-repeat bg-cover h-full'>
       <SedesCarousel />
-      <div className='flex flex-col gap-20 mt-10 px-10 py-8'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-10 mt-10 px-20 py-8'>
         {
         SEDES.map((sede, index) => {
           return (
-            <SedeCard key={index} sede={sede} isEven={index % 2 === 0} />
+            <SedeCard key={index} sede={sede} />
           )
         })
       }
