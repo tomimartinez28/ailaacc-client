@@ -1,3 +1,4 @@
+import React from 'react'
 export function MailIcon ({ size }) {
   return (
     <svg

@@ -1,3 +1,4 @@
+import React from 'react'
 import { StickyScroll } from '../../components/ui/sticky-scroll-reveal'
 import img1 from '../../assets/img/img1.webp'
 import img2 from '../../assets/img/img2.webp'

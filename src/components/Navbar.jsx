@@ -75,8 +75,8 @@ function Navbar ({ logout, isAuthenticated, user }) {
         <nav className='flex px-2 text-sm md:justify-center items-center justify-between z-10'>
 
           <div className={`
-          text-[#f6f6f6]
-          bg-customOrange
+          text-[black/80]
+          bg-[#f6f6f6]
           h-screen
           md:h-10
           
@@ -85,7 +85,7 @@ function Navbar ({ logout, isAuthenticated, user }) {
           md:static absolute
           md:w-auto w-full
           md:min-h-fit 
-          flex items-center justify-center 
+          flex md:items-center md:justify-center 
            
           
           px-5 py-1
@@ -98,6 +98,7 @@ function Navbar ({ logout, isAuthenticated, user }) {
 
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#about' : '#about'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SOBRE NOSOTROS</a>
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#contact' : '#contact'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>CONTACO</a>
+              <a onClick={!hideMenuButton ? toggleMenu : undefined} href='/sedes' className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SEDES</a>
 
             </ul>
           </div>

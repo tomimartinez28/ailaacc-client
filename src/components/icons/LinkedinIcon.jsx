@@ -1,3 +1,4 @@
+import React from 'react'
 export function LinkedinIcon ({ size }) {
   return (
     <svg

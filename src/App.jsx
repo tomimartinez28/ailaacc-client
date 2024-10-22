@@ -1,4 +1,5 @@
 import './App.css'
+import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { HomePage } from './pages/home/HomePage'
 import ResetPassword from './pages/auth/ResetPassword'
@@ -22,16 +23,15 @@ function App () {
           <Routes>
             {/* public routes */}
             <Route exact path='/' Component={HomePage} />
-
+            <Route exact path='/login' Component={Login} />
+            <Route exact path='/signup' Component={Signup} />
             <Route exact path='/sedes' Component={Sedes} />
+            <Route exact path='/reset-password' Component={ResetPassword} />
+            <Route exact path='/password/reset/confirm/:uid/:token' Component={ResetPasswordConfirm} />
+            <Route exact path='/activate/:uid/:token' Component={Activate} />
 
             {/* protected routes */}
             <Route element={<PrivateRoutes />}>
-              <Route exact path='/login' Component={Login} />
-              <Route exact path='/signup' Component={Signup} />
-              <Route exact path='/reset-password' Component={ResetPassword} />
-              <Route exact path='/password/reset/confirm/:uid/:token' Component={ResetPasswordConfirm} />
-              <Route exact path='/activate/:uid/:token' Component={Activate} />
               <Route exact path='/dashboard' Component={Admin} />
             </Route>
 

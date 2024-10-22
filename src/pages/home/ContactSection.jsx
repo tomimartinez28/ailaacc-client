@@ -1,3 +1,4 @@
+import React from 'react'
 import { ContactForm } from '../../pages/home/ContactForm'
 import { WppIcon } from '../../components/icons/WppIcon'
 import { MailIcon } from '../../components/icons/MailIcon'

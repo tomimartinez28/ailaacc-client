@@ -1,5 +1,5 @@
 'use client'
-
+import React from 'react'
 import { Carousel } from 'flowbite-react'
 import { CarouselItem } from './CarouselItem'
 import { SERVICES } from '../../const'

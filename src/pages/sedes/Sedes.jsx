@@ -1,3 +1,4 @@
+import React from 'react'
 import { SedeCard } from './SedeCard'
 import { SEDES } from '../../const'
 
@@ -8,11 +9,14 @@ export function Sedes () {
 
     <div className='bg-[url("/src/assets/svg/wavy-bg.svg")] bg-transparent bg-no-repeat bg-cover h-full'>
       <SedesCarousel />
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-10 mt-10 px-20 py-8'>
+      <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-8 px-32 gap-y-8 py-20'>
+
         {
         SEDES.map((sede, index) => {
           return (
-            <SedeCard key={index} sede={sede} />
+            <a href={sede.map} target='_blank' key={index} rel='noreferrer'>
+              <SedeCard key={index} sede={sede} />
+            </a>
           )
         })
       }

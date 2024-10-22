@@ -1,6 +1,6 @@
+import React, { useState } from 'react'
 import { UploadIcon } from '../icons/UploadIcon'
 import { DropFileIcon } from '../icons/DropFileIcon'
-import { useState } from 'react'
 
 export function DragAndDropInput ({ setFile, file }) {
   const [dragingOver, setDragingOver] = useState(false)

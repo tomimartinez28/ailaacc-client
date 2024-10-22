@@ -1,3 +1,4 @@
+import React from 'react'
 import { WrittenLogo } from './ui/WrittenLogo'
 import { WppIcon } from './icons/WppIcon'
 import { FacebookIcon } from './icons/FacebookIcon'

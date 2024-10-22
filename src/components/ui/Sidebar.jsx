@@ -1,3 +1,4 @@
+import React from 'react'
 import { TimeCounterIcon } from '../icons/TimeCounterIcon'
 import { PenIcon } from '../icons/PenIcon'
 

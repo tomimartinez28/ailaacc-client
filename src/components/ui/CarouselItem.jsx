@@ -1,3 +1,4 @@
+import React from 'react'
 export function CarouselItem ({ item }) {
   return (
 
@@ -12,11 +13,11 @@ export function CarouselItem ({ item }) {
 
      '
       >
-        <div className='bg-customOrange/70 rounded-full  px-3 py-2 flex justify-center'>
+        <div className='bg-customOrange/90 rounded-full  px-3 py-2 flex justify-center'>
           <h2 className='md:text-2xl text-xl font-semibold text-black/75 text-center '>{item.title}</h2>
         </div>
 
-        <p className='text-base md:text-base text-[#f6f6f6]/70 px-3 '>{item.description}</p>
+        <p className='text-base md:text-base text-[#f6f6f6]/85 px-3 '>{item.description}</p>
 
       </div>
 

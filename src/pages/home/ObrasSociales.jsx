@@ -1,3 +1,4 @@
+import React from 'react'
 import { OBRAS_SOCIALES } from '../../const'
 import { Carousel } from 'flowbite-react'
 
