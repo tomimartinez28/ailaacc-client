@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { logout } from '../actions/auth'
 import { Link, useLocation } from 'react-router-dom'
-import { MenuButton } from './ui/MenuButton'
 import { connect } from 'react-redux'
 import { WrittenLogo } from './ui/WrittenLogo'
 import { Dropdown } from './ui/Dropdown'
+import HamburgerMenu from './ui/HamburguerIcon'
 
 function Navbar ({ logout, isAuthenticated, user }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -69,32 +69,34 @@ function Navbar ({ logout, isAuthenticated, user }) {
 
   return (
     <>
-      <header className='flex items-center border border-black/20 justify-between px-5 md:h-[150px]'>
+      <header className='flex items-center border border-black/20 justify-between px-5 py-3 md:h-[150px]'>
         <WrittenLogo />
 
         <nav className='flex px-2 text-sm md:justify-center items-center justify-between z-10'>
 
           <div className={`
-          text-[black/80]
-          bg-[#f6f6f6]
-          h-screen
-          md:h-10
+          text-black/70
           
+          bg-backgroundColor
+          h-screen
+          px-5 py-20
+          absolute top-20
+          
+          
+          md:h-10
           md:text-black
           md:bg-transparent
-          md:static absolute
+          md:static 
           md:w-auto w-full
           md:min-h-fit 
-          flex md:items-center md:justify-center 
-           
+          flex md:items-center md:justify-center   
           
-          px-5 py-1
           ${isMenuOpen ? 'left-0' : 'left-[-100%]'} 
-          top-[0%]
-          transition-all duration-1000`}
+          
+          transition-all duration-500`}
           >
-            <ul className='flex md:flex-row flex-col md:items-center md:gap-2 lg:gap-5 gap-12 md:text-sm text-xl text-nowrap'>
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#top' : '#top'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>INICIO</a>
+            <ul className='flex md:flex-row flex-col md:items-center gap-2 lg:gap-5 text-lg text-nowrap w-full'>
+              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#top' : '#top'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100 flex justify-between'>INICIO</a>
 
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#about' : '#about'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SOBRE NOSOTROS</a>
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#contact' : '#contact'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>CONTACO</a>
@@ -111,7 +113,10 @@ function Navbar ({ logout, isAuthenticated, user }) {
 
                 <div className='flex items-center gap-2'>
 
-                  <MenuButton onClick={toggleMenu} />
+                  <HamburgerMenu
+                    onClick={toggleMenu}
+                    isMenuOpen={isMenuOpen}
+                  />
 
                 </div>
                 )
