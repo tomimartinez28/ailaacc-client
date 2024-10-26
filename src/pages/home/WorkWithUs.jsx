@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useDropzone } from 'react-dropzone'
 import { motion } from 'framer-motion'
 import { WorkWithUsEndpoint } from '../../endpoints'
-import { inputStyles } from '../../utils/inputStyles'
+import { inputStyles } from '../../utils/customStyles'
 import { Spinner } from 'flowbite-react'
 import resume from '../../assets/svg/resume.svg'
 
@@ -91,7 +91,7 @@ export function WorkWithUs () {
                 id='name'
                 name='name'
                 type='text'
-                className={inputStyles()}
+                className={inputStyles}
                 {...register('name', { required: 'Nombre es requerido' })}
               />
               {errors.name && <span className='text-red-500 text-sm'>{errors.name.message}</span>}
@@ -102,7 +102,7 @@ export function WorkWithUs () {
                 id='lastname'
                 name='lastname'
                 type='text'
-                className={inputStyles()}
+                className={inputStyles}
                 {...register('lastname', { required: 'Apellido es requerido' })}
               />
               {errors.lastname && <span className='text-red-500 text-sm'>{errors.lastname.message}</span>}
@@ -114,7 +114,7 @@ export function WorkWithUs () {
               id='email'
               name='email'
               type='email'
-              className={inputStyles()}
+              className={inputStyles}
               {...register('email', {
                 required: 'Email es requerido',
                 pattern: {
@@ -131,7 +131,7 @@ export function WorkWithUs () {
               id='cell'
               name='cell'
               type='text'
-              className={inputStyles()}
+              className={inputStyles}
               {...register('cell', {
                 required: 'Teléfono es requerido',
                 pattern: {

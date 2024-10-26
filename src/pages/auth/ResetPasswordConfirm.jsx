@@ -3,7 +3,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Label } from 'flowbite-react'
 import { resetPasswordConfirm } from '../../actions/auth'
-import { inputStyles } from '../../utils/inputStyles'
+import { inputStyles } from '../../utils/customStyles'
 
 const ResetPasswordConfirm = ({ match, resetPasswordConfirm }) => {
   const { uid } = useParams()
@@ -38,7 +38,7 @@ const ResetPasswordConfirm = ({ match, resetPasswordConfirm }) => {
             <Label htmlFor='password' value='Nueva contraseña' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='newPassword'
             type='password'
             value={newPassword}
@@ -50,7 +50,7 @@ const ResetPasswordConfirm = ({ match, resetPasswordConfirm }) => {
             <Label htmlFor='password' value='Repita su nueva contraseña' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='re_new_password'
             type='password'
             placeholder=''

@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Label } from 'flowbite-react'
 import { resetPassword } from '../../actions/auth'
-import { inputStyles } from '../../utils/inputStyles'
+import { inputStyles } from '../../utils/customStyles'
 
 const ResetPassword = ({ resetPassword }) => {
   const [requestSent, setRequestSent] = useState(false)
@@ -39,7 +39,7 @@ const ResetPassword = ({ resetPassword }) => {
             <Label htmlFor='email' value='Tu email' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='email'
             type='email'
             value={email}

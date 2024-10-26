@@ -3,7 +3,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Checkbox, Label } from 'flowbite-react'
 import { login } from '../../actions/auth'
-import { inputStyles } from '../../utils/inputStyles'
+import { inputStyles } from '../../utils/customStyles'
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -56,7 +56,7 @@ const Login = ({ login, isAuthenticated }) => {
             <Label htmlFor='email' value='Email' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='email'
             type='email'
             value={email}
@@ -71,7 +71,7 @@ const Login = ({ login, isAuthenticated }) => {
             <Label htmlFor='password' value='Contraseña' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='password'
             type='password'
             placeholder=''

@@ -3,7 +3,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Label } from 'flowbite-react'
 import { signUp } from '../../actions/auth'
-import { inputStyles } from '../../utils/inputStyles'
+import { inputStyles } from '../../utils/customStyles'
 
 const Signup = ({ signUp, isAuthenticated }) => {
   const [accountCreated, setAccountCreated] = useState(false)
@@ -45,7 +45,7 @@ const Signup = ({ signUp, isAuthenticated }) => {
           </div>
           <input
             name='name'
-            className={inputStyles()}
+            className={inputStyles}
             type='text'
             value={name}
             placeholder='Tomas'
@@ -59,7 +59,7 @@ const Signup = ({ signUp, isAuthenticated }) => {
             <Label htmlFor='name' value='Tu apellido' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='last_name'
             type='text'
             value={last_name}
@@ -74,7 +74,7 @@ const Signup = ({ signUp, isAuthenticated }) => {
             <Label htmlFor='email' value='Tu email' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='email'
             type='email'
             value={email}
@@ -89,7 +89,7 @@ const Signup = ({ signUp, isAuthenticated }) => {
             <Label htmlFor='password' value='Contraseña' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='password'
             type='password'
             value={password}
@@ -101,7 +101,7 @@ const Signup = ({ signUp, isAuthenticated }) => {
             <Label htmlFor='rePassword' value='Repita su contraseña' />
           </div>
           <input
-            className={inputStyles()}
+            className={inputStyles}
             name='rePassword'
             type='password'
             value={rePassword}

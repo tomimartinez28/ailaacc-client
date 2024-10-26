@@ -95,7 +95,7 @@ function Navbar ({ logout, isAuthenticated, user }) {
           
           transition-all duration-500`}
           >
-            <ul className='flex md:flex-row flex-col md:items-center gap-2 lg:gap-5 text-lg text-nowrap w-full'>
+            <ul className='flex md:flex-row flex-col md:items-center gap-2 lg:gap-5 text-base text-nowrap w-full'>
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#top' : '#top'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100 flex justify-between'>INICIO</a>
 
               <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#about' : '#about'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SOBRE NOSOTROS</a>

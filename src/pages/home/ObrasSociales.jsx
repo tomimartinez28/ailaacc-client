@@ -2,6 +2,12 @@ import React from 'react'
 import { OBRAS_SOCIALES } from '../../const'
 import { Carousel } from 'flowbite-react'
 
+const customTheme = {
+  scrollContainer: {
+    base: 'flex h-full snap-mandatory overflow-y-hidden overflow-x-scroll scroll-smooth',
+    snap: 'snap-x'
+  }
+}
 export function ObrasSociales () {
   // Define el número de elementos por slide
   const itemsPerSlide = 4
@@ -18,7 +24,7 @@ export function ObrasSociales () {
         <h2 className='text-black/70 text-3xl md:text-6xl '>Trabajamos con <span className='text-customOrange'>todas</span> las obras sociales.</h2>
       </div>
 
-      <Carousel leftControl=' ' rightControl=' ' indicators={false} slideInterval={2000}>
+      <Carousel theme={customTheme} leftControl=' ' rightControl=' ' indicators={false}>
 
         {
           slides.map((slide, index) => {
