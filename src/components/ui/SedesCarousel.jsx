@@ -1,7 +1,7 @@
 import React from 'react'
 import { Carousel } from 'flowbite-react'
 import { CarouselItem } from './CarouselItem'
-import { SEDE_CAROUSEL_ITEM } from '../../const'
+import { SEDE_CAROUSEL_ITEM } from '../../utils/const'
 import { customCarouselTheme } from '../../utils/customStyles'
 
 export function SedesCarousel () {

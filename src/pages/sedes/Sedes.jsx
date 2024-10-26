@@ -1,6 +1,6 @@
 import React from 'react'
 import { SedeCard } from './SedeCard'
-import { SEDES } from '../../const'
+import { SEDES } from '../../utils/const'
 
 import { SedesCarousel } from '../../components/ui/SedesCarousel'
 
