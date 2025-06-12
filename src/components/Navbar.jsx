@@ -1,46 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { logout } from '../actions/auth'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { WrittenLogo } from './ui/WrittenLogo'
 import { Dropdown } from './ui/Dropdown'
 import HamburgerMenu from './ui/HamburguerIcon'
+import useIsDesktop from '../customHooks/useIsDesktop'
 
 function Navbar ({ logout, isAuthenticated, user }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const isDesktop = useIsDesktop()
+  const location = useLocation()
+  const navigate = useNavigate()
+  const toggleMenu = () => setIsMenuOpen(prev => !prev)
 
-  // Función para determinar si se debe ocultar el botón del menú
-  const shouldHideMenuButton = () => window.innerWidth > 768
-
-  const [hideMenuButton, setHideMenuButton] = useState(shouldHideMenuButton())
-
-  // Función para manejar el cambio de tamaño de la ventana
-  const handleResize = () => {
-    // Actualiza el estado en función del ancho de la ventana
-    setHideMenuButton(shouldHideMenuButton())
+  const handleNavigation = (path, id) => {
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 100)
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   useEffect(() => {
-    if (isMenuOpen) {
-      // Agregar el estilo al cuerpo para deshabilitar el scroll
-      document.body.style.overflow = 'hidden'
-    } else {
-      // Eliminar el estilo del cuerpo para habilitar el scroll
-      document.body.style.overflow = 'auto'
-    }
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto'
   }, [isMenuOpen])
-
-  useEffect(() => {
-    // Agrega el evento de cambio de tamaño de la ventana al montar el componente
-    window.addEventListener('resize', handleResize)
-
-    // Elimina el evento de cambio de tamaño de la ventana al desmontar el componente
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, []) // Se ejecuta solo una vez al montar el componente
-
-  const location = useLocation()
 
   const guestsLinks = () => (
     <>
@@ -53,19 +38,10 @@ function Navbar ({ logout, isAuthenticated, user }) {
   const authLinks = () => (
     <>
       {
-      user && <Dropdown logout={logout} username={`${user.name} ${user.last_name}`} />
-    }
+          user && <Dropdown logout={logout} username={`${user.name} ${user.last_name}`} />
+        }
     </>
   )
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-    if (!isMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'auto'
-    }
-  }
 
   return (
     <>
@@ -76,7 +52,6 @@ function Navbar ({ logout, isAuthenticated, user }) {
 
           <div className={`
           text-black/70
-          
           bg-backgroundColor
           h-screen
           px-5 py-20
@@ -96,28 +71,27 @@ function Navbar ({ logout, isAuthenticated, user }) {
           transition-all duration-500`}
           >
             <ul className='flex md:flex-row flex-col md:items-center gap-2 lg:gap-5 text-base text-nowrap w-full'>
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#top' : '#top'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100 flex justify-between'>INICIO</a>
 
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#about' : '#about'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SOBRE NOSOTROS</a>
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href={location !== '/' ? '/#contact' : '#contact'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>CONTACO</a>
-              <a onClick={!hideMenuButton ? toggleMenu : undefined} href='/sedes' className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SEDES</a>
+              <Link onClick={!isDesktop ? toggleMenu : undefined} to={location !== '/' ? '/#top' : '#top'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100 flex justify-between'>INICIO</Link>
+
+              <Link onClick={!isDesktop ? toggleMenu : undefined} to={location !== '/' ? '/#about' : '#about'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SOBRE NOSOTROS</Link>
+              <Link onClick={!isDesktop ? toggleMenu : undefined} to={location !== '/' ? '/#contact' : '#contact'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>CONTACO</Link>
+              <Link onClick={!isDesktop ? toggleMenu : undefined} to='/sedes' className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SEDES</Link>
 
             </ul>
           </div>
 
         </nav>
         {
-            !hideMenuButton
+            !isDesktop
 
               ? (
 
                 <div className='flex items-center gap-2'>
-
                   <HamburgerMenu
                     onClick={toggleMenu}
                     isMenuOpen={isMenuOpen}
                   />
-
                 </div>
                 )
 
