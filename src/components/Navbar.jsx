@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { logout } from '../actions/auth'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -12,7 +12,7 @@ function Navbar ({ logout, isAuthenticated, user }) {
   const isDesktop = useIsDesktop()
   const location = useLocation()
   const navigate = useNavigate()
-  const toggleMenu = () => setIsMenuOpen(prev => !prev)
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev)
 
   const handleNavigation = (path, id) => {
     if (location.pathname !== '/') {
@@ -30,18 +30,14 @@ function Navbar ({ logout, isAuthenticated, user }) {
   const guestsLinks = () => (
     <>
       <Link to='/login'>
-        <button className='py-1 px-3 bg-customOrange border-2 border-customOrange hover:bg-transparent text-backgroundColor font-bold hover:text-black transition-all duration-700 rounded-full text-sm'>INICIAR SESIÓN</button>
+        <button className='py-1 px-3 bg-customOrange border-2 border-customOrange hover:bg-transparent text-backgroundColor font-bold hover:text-black transition-all duration-700 rounded-full text-sm'>
+          INICIAR SESIÓN
+        </button>
       </Link>
     </>
   )
 
-  const authLinks = () => (
-    <>
-      {
-        user && <Dropdown logout={logout} username={`${user.name} ${user.last_name}`} />
-      }
-    </>
-  )
+  const authLinks = () => <>{user && <Dropdown logout={logout} username={`${user.name} ${user.last_name}`} />}</>
 
   return (
     <>
@@ -49,8 +45,8 @@ function Navbar ({ logout, isAuthenticated, user }) {
         <WrittenLogo />
 
         <nav className='flex px-2 text-sm md:justify-center items-center justify-between z-10'>
-
-          <div className={`
+          <div
+            className={`
           text-black/70
           bg-backgroundColor
           h-screen
@@ -71,41 +67,61 @@ function Navbar ({ logout, isAuthenticated, user }) {
           transition-all duration-500`}
           >
             <ul className='flex md:flex-row flex-col md:items-center gap-2 lg:gap-5 text-base text-nowrap w-full'>
+              <button
+                onClick={() => {
+                  if (!isDesktop) toggleMenu()
+                  handleNavigation('/', 'top')
+                }}
+                className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100 flex justify-between'
+              >
+                INICIO
+              </button>
 
-              <Link onClick={!isDesktop ? toggleMenu : undefined} to={location !== '/' ? '/#top' : '#top'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100 flex justify-between'>INICIO</Link>
+              <button
+                onClick={() => {
+                  if (!isDesktop) toggleMenu()
+                  handleNavigation('/', 'about')
+                }}
+                className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'
+              >
+                SOBRE NOSOTROS
+              </button>
 
-              <Link onClick={!isDesktop ? toggleMenu : undefined} to={location !== '/' ? '/#about' : '#about'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SOBRE NOSOTROS</Link>
-              <Link onClick={!isDesktop && toggleMenu} to={location !== '/' ? '/#contact' : '#contact'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>CONTACO</Link>
-              <Link onClick={!isDesktop ? toggleMenu : undefined} to='/sedes' className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SEDES</Link>
+              <button
+                onClick={() => {
+                  if (!isDesktop) toggleMenu()
+                  handleNavigation('/', 'contact')
+                }}
+                className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'
+              >
+                CONTACO
+              </button>
 
+              <Link
+                onClick={!isDesktop ? toggleMenu : undefined}
+                to='/sedes'
+                className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'
+              >
+                SEDES
+              </Link>
             </ul>
           </div>
-
         </nav>
-        {
-          !isDesktop
-
-            ? (
-
-              <div className='flex items-center gap-2'>
-                <HamburgerMenu
-                  onClick={toggleMenu}
-                  isMenuOpen={isMenuOpen}
-                />
-              </div>
-              )
-
-            : (
-              <div className='' />
-              )
-        }
-
+        {!isDesktop
+          ? (
+            <div className='flex items-center gap-2'>
+              <HamburgerMenu onClick={toggleMenu} isMenuOpen={isMenuOpen} />
+            </div>
+            )
+          : (
+            <div className='' />
+            )}
       </header>
     </>
   )
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   user: state.auth.user
 })
