@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function useIsDesktop () {
-  const [isDesktop, setIsDesktop] = useState()
+  const [isDesktop, setIsDesktop] = useState(true)
 
   const desktopMediaQuery = window.matchMedia('(min-width : 768px)')
 

@@ -56,16 +56,16 @@ export function TimeCounter () {
         <DragAndDropInput setFile={setFile} file={file} />
         <div className='flex items-center justify-center'>
           {
-          loading
-            ? <Spinner />
-            : <motion.button
-                whileHover={{ scale: 0.9 }}
-                type='submit'
-                className='w-full rounded-full bg-customOrange text-[#f6f6f6] font-semibold py-2'
-              >
-              Contar horas
-            </motion.button>
-        }
+            loading
+              ? <Spinner />
+              : <motion.button
+                  whileHover={{ scale: 0.9 }}
+                  type='submit'
+                  className='w-full rounded-full bg-customOrange text-[#f6f6f6] font-semibold py-2'
+                >
+                Contar horas
+              </motion.button>
+          }
         </div>
 
       </form>

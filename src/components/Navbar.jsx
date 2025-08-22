@@ -38,8 +38,8 @@ function Navbar ({ logout, isAuthenticated, user }) {
   const authLinks = () => (
     <>
       {
-          user && <Dropdown logout={logout} username={`${user.name} ${user.last_name}`} />
-        }
+        user && <Dropdown logout={logout} username={`${user.name} ${user.last_name}`} />
+      }
     </>
   )
 
@@ -75,7 +75,7 @@ function Navbar ({ logout, isAuthenticated, user }) {
               <Link onClick={!isDesktop ? toggleMenu : undefined} to={location !== '/' ? '/#top' : '#top'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100 flex justify-between'>INICIO</Link>
 
               <Link onClick={!isDesktop ? toggleMenu : undefined} to={location !== '/' ? '/#about' : '#about'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SOBRE NOSOTROS</Link>
-              <Link onClick={!isDesktop ? toggleMenu : undefined} to={location !== '/' ? '/#contact' : '#contact'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>CONTACO</Link>
+              <Link onClick={!isDesktop && toggleMenu} to={location !== '/' ? '/#contact' : '#contact'} className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>CONTACO</Link>
               <Link onClick={!isDesktop ? toggleMenu : undefined} to='/sedes' className='p-2 rounded-full hover:font-bold md:hover:text-customOrange md:hover:bg-customOrange/10 transition-all duration-100'>SEDES</Link>
 
             </ul>
@@ -83,22 +83,22 @@ function Navbar ({ logout, isAuthenticated, user }) {
 
         </nav>
         {
-            !isDesktop
+          !isDesktop
 
-              ? (
+            ? (
 
-                <div className='flex items-center gap-2'>
-                  <HamburgerMenu
-                    onClick={toggleMenu}
-                    isMenuOpen={isMenuOpen}
-                  />
-                </div>
-                )
+              <div className='flex items-center gap-2'>
+                <HamburgerMenu
+                  onClick={toggleMenu}
+                  isMenuOpen={isMenuOpen}
+                />
+              </div>
+              )
 
-              : (
-                <div className='' />
-                )
-          }
+            : (
+              <div className='' />
+              )
+        }
 
       </header>
     </>
