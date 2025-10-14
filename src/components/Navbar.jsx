@@ -3,7 +3,6 @@ import { logout } from '../actions/auth'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { WrittenLogo } from './ui/WrittenLogo'
-import { Dropdown } from './ui/Dropdown'
 import HamburgerMenu from './ui/HamburguerIcon'
 import useIsDesktop from '../customHooks/useIsDesktop'
 
@@ -26,18 +25,6 @@ function Navbar ({ logout, isAuthenticated, user }) {
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto'
   }, [isMenuOpen])
-
-  const guestsLinks = () => (
-    <>
-      <Link to='/login'>
-        <button className='py-1 px-3 bg-customOrange border-2 border-customOrange hover:bg-transparent text-backgroundColor font-bold hover:text-black transition-all duration-700 rounded-full text-sm'>
-          INICIAR SESIÓN
-        </button>
-      </Link>
-    </>
-  )
-
-  const authLinks = () => <>{user && <Dropdown logout={logout} username={`${user.name} ${user.last_name}`} />}</>
 
   return (
     <>
