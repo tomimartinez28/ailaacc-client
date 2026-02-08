@@ -3,10 +3,9 @@ import { ServicesCarousel } from '../../components/ui/ServicesCarousel'
 import { MainCard } from '../../components/ui/MainCard'
 import { Modal } from '../../components/ui/Modal'
 import { Sedes } from '../sedes/Sedes'
-import { ObrasSociales } from './ObrasSociales'
 import { WorkWithUs } from './WorkWithUs'
 import location from '../../assets/svg/location.svg'
-import os from '../../assets/svg/os.svg'
+import contact from '../../assets/svg/contact.svg'
 import workwithus from '../../assets/svg/workwithus.svg'
 
 export function HomeSection () {
@@ -16,7 +15,7 @@ export function HomeSection () {
   const renderModal = () => {
     switch (selectedCard) {
       case 'os':
-        return (<ObrasSociales />)
+        return
       case 'lo':
         return (<Sedes />)
       case 'work':
@@ -32,7 +31,9 @@ export function HomeSection () {
     <main className='pb-10'>
       <ServicesCarousel />
       <div className='flex md:flex-row flex-col justify-between items-center px-20 mt-4 mb-4 w-[100%] h-[800px] md:h-[350px] gap-10 md:gap-3 '>
-        <MainCard onClick={() => { setIsOpen(true); setSelectedCard('os') }} imgSrc={os} title='OBRAS SOCIALES' body='Trabajamos con todas las obras sociales' />
+        <a href='https://wa.link/r2dav6' target='_blank' rel='noreferrer noopener'>
+          <MainCard imgSrc={contact} title='CONTACTANOS' body='Trabajamos con todas las obras sociales' />
+        </a>
         <a href='/sedes'>
           <MainCard imgSrc={location} title='SEDES' body='Conocé todas nuestras sedes.' />
         </a>
